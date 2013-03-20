@@ -27,12 +27,11 @@ div {
 	background-color: #0c53df;
 }
 #screen2 {
-	background-color: #f4d2d5;
+	background-color: #ffffff;
 }
 #screen3 {
 	background-color: #036532;
 }
-
 #title {
 	margin: 300px auto 0 auto;
 	text-align: center;
@@ -40,27 +39,28 @@ div {
 	line-height: 70px;
 	font-style: italic;
 	color: #ffffff;
-
 }
-
 .object1, .object2 {
 	margin: 150px auto;
 	width: 100px; 
 	height: 100px; 
 	background-color: green;
 }
-.object2 {position: relative; right: auto;}
-
+.object2 {
+	position: relative; 
+	right: auto;
+}
 .object3 {
 	width: 500px;
 	height: 100px;
+	border:1px solid black;
 	background-color: white;
 	position: relative;
 	left: 160px;
 }
 .object4 {
-	
-		position: relative;
+	position: relative;
+	border:1px solid black;
 	left: 460px;
 	width: 500px;
 	height: 100px;
