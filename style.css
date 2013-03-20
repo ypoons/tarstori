@@ -1,0 +1,68 @@
+html, body {
+	height:100%;
+	text-rendering: optimizeLegibility !important;
+	-moz-font-feature-settings:"liga=1,dlig=1";
+	-ms-font-feature-settings:liga,dlig;
+	-o-font-feature-settings:liga,dlig;
+	-webkit-font-feature-settings:liga,dlig;
+	font-feature-settings:liga,dlig;
+	-webkit-text-size-adjust: 100%;
+	image-rendering:optimizeQuality;
+	font-kerning: normal;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial;
+}
+div {
+	display: block;
+}
+#wrap {
+	height: 100%;
+}
+#wrap > div {
+	height: 100%;
+	width: 100%;
+	padding: 20px;
+}
+
+#screen1 {
+	background-color: #0c53df;
+}
+#screen2 {
+	background-color: #f4d2d5;
+}
+#screen3 {
+	background-color: #036532;
+}
+
+#title {
+	margin: 300px auto 0 auto;
+	text-align: center;
+	font-size: 80px;
+	line-height: 70px;
+	font-style: italic;
+	color: #ffffff;
+
+}
+
+.object1, .object2 {
+	margin: 150px auto;
+	width: 100px; 
+	height: 100px; 
+	background-color: green;
+}
+.object2 {position: relative; right: auto;}
+
+.object3 {
+	width: 500px;
+	height: 100px;
+	background-color: white;
+	position: relative;
+	left: 160px;
+}
+.object4 {
+	
+		position: relative;
+	left: 460px;
+	width: 500px;
+	height: 100px;
+	background-color: white;
+}
