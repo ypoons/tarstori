@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8" />
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
 
-<link rel="stylesheet" href="scrollorama/css/normalize.css" type="text/css">
-<script type="text/javascript" src="scrollorama/js/greensock/TweenMax.min.js"></script>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
-<script src="jquery-1.9.1.min.js"></script>
-<script src="scrollorama/js/jquery.lettering-0.6.1.min.js"></script>
-<script src="scrollorama/js/jquery.superscrollorama.js"></script>
+
+    </style>
+    <script src="jquery-1.9.1.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
 <link rel="stylesheet" type="text/css" media="all" href="style.css" />
-<title>Társtöri cucc</title>
-</head>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2HhfZxhkPY-XqXWXKg-CDmuVGWESw4zk&sensor=true">
+    </script>
+    <script type="text/javascript">
+    
+      
+     // google.maps.event.addDomListener(window, 'load', initialize());
+    $(document).ready(function() {
+      var map;
 
-<body>
-<div id="wrap">
-	<div id="screen1">
-		<h1 id="title">Társtöri<br/>cucc</h2>
-	</div>
-	<div id="screen2">
-		<div class="object1">Object 1 - Fade</div>
-		<div class="object2">Object 2 - Fly</div>
-	</div>
-		<div id="screen3">
-		<div class="object3">Object 3 - Parallax 1</div>
-		<div class="object4">Object 4 - Parallax 2</div>
-	</div>
-</div>
-	<script>
-		$(document).ready(function() {
-			$('body').css('visibility','visible');
-			(new TimelineLite({onComplete:initScrollAnimations}))
-			function initScrollAnimations() {
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(48.160, -6.832),
+          disableDefaultUI: true,
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+    map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+      }
+      
+      initialize();
+      var cities = {
+      'Groningen':  [ 53.216723950863425, 6.560211181640625, 8],
+      'Los Angeles': [ 34.01131647557699, -118.25599389648437, 8],
+      'New York City': [ 40.7143528, -74.0059731, 10]
+      };
 
-				var controller = $.superscrollorama();
-				
-				
-				controller.addTween('.object1', TweenMax.from( $('.object1'), .5, {css:{opacity: 0}}));
-				controller.addTween('.object2', TweenMax.from( $('.object2'), .25, {css:{right:'1000px'}, ease:Quad.easeInOut}));
-				/*controller.addTween('#spin-it', TweenMax.from( $('#spin-it'), .25, {css:{opacity:0, rotation: 720}, ease:Quad.easeOut}));
-				controller.addTween('#scale-it', TweenMax.fromTo( $('#scale-it'), .25, {css:{opacity:0, fontSize:'20px'}, immediateRender:true, ease:Quad.easeInOut}, {css:{opacity:1, fontSize:'240px'}, ease:Quad.easeInOut}));
-				controller.addTween('#smush-it', TweenMax.fromTo( $('#smush-it'), .25, {css:{opacity:0, 'letter-spacing':'30px'}, immediateRender:true, ease:Quad.easeInOut}, {css:{opacity:1, 'letter-spacing':'-10px'}, ease:Quad.easeInOut}), 0, 100); // 100 px offset for better timing*/
-				controller.addTween(
-					'#screen3',
-					(new TimelineLite())
-						.append([
-							TweenMax.fromTo($('.object3'), 1, 
-								{css:{top: 200}, immediateRender:true}, 
-								{css:{top: -600}}),
-							TweenMax.fromTo($('.object4'), 1, 
-								{css:{top: 500}, immediateRender:true}, 
-								{css:{top: -1250}})
-						]),
-					1000 // scroll duration of tween
-				);
+      $("#markers").on("click", ".map_link", function() {
+          /* "this" within handler is the actual element clciked*/
 
-			}
-		});
-	</script>
-</body>
+          /* find correct array from "cities" object */
+         var data=cities[ $(this).data('city') ]; /* returns array[ 53.21, 6.56, 4]*/
+          var laLatLng = new google.maps.LatLng(data[0],data[1]);
+          map.panTo(laLatLng);
+          map.setZoom( data[2]);
+       });
 
+
+    });
+
+    </script>
+  </head>
+  <body>
+    <div id="markers">
+      <div class="map_link" data-city="New York City">New York City</div>
+      <div class="map_link" data-city="Groningen">Groningen</div>
+      <div class="map_link" data-city="Los Angeles">Los Angeles</div>
+    </div>
+    <div id="map-canvas"/>
+  </body>
 </html>

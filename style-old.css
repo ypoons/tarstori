@@ -1,7 +1,5 @@
 html, body {
 	height:100%;
-	        margin: 0; 
-        padding: 0 
 	text-rendering: optimizeLegibility !important;
 	-moz-font-feature-settings:"liga=1,dlig=1";
 	-ms-font-feature-settings:liga,dlig;
@@ -13,27 +11,6 @@ html, body {
 	font-kerning: normal;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial;
 }
-  #markers {
-    position: absolute;
-   z-index: 999; 
-   cursor: pointer;
- }
-  #markers div {
-    width: 160px; 
-    font-weight: 600; 
-    height: 20px; 
-    background-color: #f4debb; 
-    float: left; 
-    padding: 5px;
-    border-radius: 5px; 
-    margin: 10px; 
-    text-align: center;
-    border: 1px solid white;
-    box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.2);
-   }
-  #map-canvas { 
-    height: 100%;
-   }
 div {
 	display: block;
 }

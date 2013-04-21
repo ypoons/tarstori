@@ -1,0 +1,748 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"doc",
+				"document"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"tex",
+				"text-indent"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"por",
+				"portfolioimage"
+			],
+			[
+				"par",
+				"parseInt"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"on",
+				"ontop"
+			],
+			[
+				"su",
+				"substring"
+			],
+			[
+				"to",
+				"toString"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"Key",
+				"keyCode"
+			],
+			[
+				"restore",
+				"restoreg"
+			],
+			[
+				"bor",
+				"border-bottom"
+			],
+			[
+				"bord",
+				"border-bottom"
+			],
+			[
+				"ste",
+				"step_back"
+			],
+			[
+				"subt",
+				"subtleFade"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"bacgro",
+				"background-color"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"ba",
+				"background-position"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"port",
+				"portfolio"
+			],
+			[
+				"step",
+				"step_forward"
+			],
+			[
+				"get",
+				"getTitle"
+			],
+			[
+				"po",
+				"pointer"
+			],
+			[
+				"row",
+				"row-fluid"
+			],
+			[
+				"fade",
+				"fadeIn"
+			],
+			[
+				"cont",
+				"content"
+			],
+			[
+				"portf",
+				"portfolioimage"
+			],
+			[
+				"do",
+				"document"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"boder",
+				"border-right"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"ab",
+				"absolute"
+			],
+			[
+				"paddi",
+				"padding"
+			],
+			[
+				"span",
+				"span4"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"sm",
+				"small-caps"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"img",
+				"img	img"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"pad",
+				"padding-right"
+			],
+			[
+				"border-r",
+				"border-right"
+			],
+			[
+				"descri",
+				"descrip"
+			],
+			[
+				"max",
+				"max-device-width"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"image",
+				"imageAnimation"
+			],
+			[
+				"border-top-",
+				"border-top-right-radius"
+			],
+			[
+				"text-",
+				"text-indent"
+			],
+			[
+				"lig",
+				"lightblue"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"p",
+				"padding-bottom"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"a",
+				"a"
+			],
+			[
+				"backgro",
+				"background-size"
+			],
+			[
+				"get_cate",
+				"get_cat_name"
+			],
+			[
+				"fest",
+				"fest-aloldal"
+			],
+			[
+				"bak",
+				"background-color"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"rgb",
+				"rgba()"
+			],
+			[
+				"style",
+				"stylesheet"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"r",
+				"right"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"margi",
+				"margin-left"
+			],
+			[
+				"linea",
+				"linear-gradient"
+			],
+			[
+				"trans",
+				"transition-property"
+			],
+			[
+				"ftps",
+				"ftp_passive_mode"
+			],
+			[
+				"ftp",
+				"ftps"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 386.0,
+		"selected_items":
+		[
+			[
+				"ti",
+				"Tidy CSS"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: re",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 445.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Volumes/Discourse/discourse/discourse/sublime-project",
+		"/Users/sevores/Desktop/untitled folder 3/revolve",
+		"/Applications/MAMP/htdocs/portfolio/js/portfolio.js",
+		"/Volumes/Ultrahang/wp-content/themes/ultrahang/uh.sublime-project",
+		"/Volumes/Ultrahang/wp-content/themes/ultrahang 2.0/footer.php",
+		"/Volumes/Ultrahang/wp-content/themes/ultrahang 2.0/style.less",
+		"/Volumes/Ultrahang/wp-content/themes/ultrahang 2.0/hirek.php",
+		"/Volumes/Ultrahang/wp-content/themes/ultrahang 2.0/style.css",
+		"/Volumes/Ultrahang/wp-content/themes/ultrahang 2.0/content-single-hirek.php",
+		"/Volumes/Ultrahang/wp-content/themes/ultrahang 2.0/esemenyek.php",
+		"/Volumes/Ultrahang/wp-content/themes/ultrahang 2.0/alapitvany.php",
+		"/Volumes/Ultrahang/wp-content/themes/ultrahang 2.0/index.php",
+		"/Volumes/Ultrahang/wp-content/themes/ultrahang 2.0/content.php",
+		"/Volumes/Ultrahang/wp-content/themes/ultrahang 2.0/category-hirek.php",
+		"/Volumes/Ultrahang/wp-content/themes/ultrahang 2.0/page.php",
+		"/Volumes/Ultrahang/wp-content/themes/ultrahang 2.0/content-hir.php",
+		"/Volumes/Ultrahang/wp-content/themes/ultrahang 2.0/single.php",
+		"/Volumes/Ultrahang/wp-content/themes/ultrahang/style.css",
+		"/Volumes/Ultrahang/wp-content/themes/ultrahang/style.less",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/style.less",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/comments.php",
+		"/Users/sevores/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/sevores/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/content-single-irasok.php",
+		"/Users/sevores/Library/Application Support/Sublime Text 2/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/header.php",
+		"/Users/sevores/Library/Application Support/Sublime Text 2/Packages/SublimeCodeIntel/Default (OSX).sublime-keymap",
+		"/Users/sevores/Library/Application Support/Sublime Text 2/Packages/SublimeCodeIntel/Base File.sublime-settings",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/esemenyek.php",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/plugins/nextgen-gallery/css/uhgallery.css",
+		"/Users/sevores/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/content-single-hirek.php",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/hirek.php",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/style.css",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/covertest.html",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/sftp-config.json",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/sftp-config.json",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/footer.php",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/retina.css",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/functions.php",
+		"/Users/sevores/Library/Application Support/Sublime Text 2/Packages/User/Side Bar.sublime-settings",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/gallery.php",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/plugins/nextgen-gallery/shutter/shutter-reloaded.css",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/content-hir.php",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/alapitvany.php",
+		"/Users/sevores/Library/Application Support/Sublime Text 2/Packages/User/Base File.sublime-settings",
+		"/Users/sevores/Desktop/uh.css",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/feszt-aloldal.php",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/search.php",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/searchform.php",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/404.php",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/content-image.php",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/fesztival.php",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/koncertek-aloldal.php",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/kod/kod.html",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/kod.html",
+		"/Users/sevores/Sites/ultrahang/Assets/logo.png",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/nix.less",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/windows.less",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/windows.css",
+		"/Users/sevores/Sites/ultrahang/www.ultrahang.hu/wp-content/themes/ultrahang/nix.css",
+		"/Users/sevores/Library/Application Support/Sublime Text 2/Packages/User/SFTP.errors.log",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/content-Lemezek.php",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/content-lemezek.php",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/feszt-aloldal.php",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/koncertek-aloldal.php",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/search.svg",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/style.less",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/header.php",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/oldmenu.css",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/hirek.php",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/content-hir.php",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/style.css",
+		"/Users/sevores/Library/Application Support/Sublime Text 2/Packages/User/sftp_servers/ultrahang",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/category-hirek.php",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/sftp-config.json",
+		"/Users/sevores/Desktop/harom.xhtml",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/iphone@2x.css",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/iphone.less",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/image.php",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/functions.php",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/fallback.css",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/content-single-hirek.php",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/alapitvany.php",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/retina.css",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/feszt-2010.php",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/index.php",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/iphone.css",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/koncertek.php",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/fesztival.php",
+		"/Users/sevores/Library/Application Support/Sublime Text 2/Packages/SFTP/SFTP.sublime-settings",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/calendar.svg",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/js/less.js",
+		"/Users/sevores/Library/Application Support/Sublime Text 2/Packages/User/Plain text.sublime-settings",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/ftpsync.settings",
+		"/Users/sevores/Sites/ultrahang/wp-content/themes/ultrahang/js/less-1.3.0.min.js",
+		"/Users/sevores/Downloads/less-1.3.0.min.js",
+		"/Users/sevores/Desktop/style.css",
+		"/Users/sevores/Desktop/uh_style",
+		"/Users/sevores/Desktop/uh_center",
+		"/Users/sevores/Desktop/uh_head.html",
+		"/Users/sevores/Desktop/uh_bal_fixd",
+		"/Users/sevores/Sites/ultrahang/wp-config.php",
+		"/Users/sevores/Sites/ultrahang/ftpsync.settings"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".",
+			"-",
+			",",
+			"-",
+			",",
+			"69c8d7",
+			"portfo",
+			"div",
+			"5px",
+			"<a",
+			"a",
+			"class",
+			"margin-left: 0",
+			"padding-left: 0",
+			"first-",
+			".row-fluid [class*=\"span\"]:first-child",
+			"firs",
+			"letter",
+			"=\"../",
+			"font-weight: 300",
+			"body",
+			"imgwrap",
+			"entry-content",
+			"fest-con",
+			"\\([A-Z]*\\/[A-Z]*\\)",
+			"\\([A-Z]*\\)",
+			"alapitvany p",
+			"box-shadow:",
+			"the_field('url'); ",
+			"query",
+			"text-sha",
+			"alapitvany",
+			"text-inden",
+			"dow:",
+			"-color",
+			"min-height: 100%;",
+			"min-height:100%;",
+			"body",
+			"fest-",
+			"box-shadow:",
+			"access",
+			"#page",
+			"hirek, ",
+			"article",
+			"130px",
+			"hire",
+			":after",
+			"body,in",
+			"ound-colo",
+			"h3",
+			"entry-content",
+			"access",
+			".hirek",
+			"access",
+			"current",
+			"footer",
+			"entry-meta",
+			"line-height:1;",
+			"line-height:1",
+			".article",
+			"alapit",
+			"fest-con",
+			"em {",
+			"em",
+			"body",
+			"edit-link",
+			"edit-",
+			"hivatalos",
+			"feszt",
+			"box",
+			"access",
+			"country",
+			"fest-content",
+			"td",
+			"caption, th, td",
+			"access",
+			"h1",
+			"access ",
+			"1.6em",
+			":after",
+			"url",
+			"before",
+			":after",
+			"logo",
+			"background-col",
+			"shadow",
+			"#shadow",
+			"shadow",
+			"us: 1",
+			"us: 10",
+			"panel",
+			"theme",
+			"twitter",
+			"70",
+			"font-size",
+			"access",
+			"access ul",
+			"#feszt",
+			"filter",
+			"imgwrap",
+			"div",
+			"h2",
+			"control",
+			"packa",
+			"@med",
+			"twitter",
+			"hir-s",
+			"single-",
+			"font-si",
+			"img",
+			"480",
+			"img.siz",
+			"hirek .ca",
+			".hirek",
+			"shadow",
+			"media",
+			"access",
+			"article",
+			"html",
+			"access",
+			"anima",
+			"slides",
+			".alapi",
+			"koncertek",
+			"lemezek",
+			"fest-alold",
+			".hirek .en",
+			"15px"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.sftp":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"fall",
+				"fallback.css"
+			],
+			[
+				"fun",
+				"functions.php"
+			],
+			[
+				"he",
+				"header.php"
+			],
+			[
+				"h",
+				"header.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 178.0,
+	"status_bar_visible": true
+}
