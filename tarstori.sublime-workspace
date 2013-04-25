@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
 				"ma",
 				"margin"
 			],
@@ -14,10 +30,6 @@
 			[
 				"font",
 				"font-weight"
-			],
-			[
-				"tex",
-				"text-indent"
 			],
 			[
 				"bac",
@@ -40,10 +52,6 @@
 				"parseInt"
 			],
 			[
-				"fon",
-				"font-size"
-			],
-			[
 				"on",
 				"ontop"
 			],
@@ -54,10 +62,6 @@
 			[
 				"to",
 				"toString"
-			],
-			[
-				"border",
-				"border"
 			],
 			[
 				"Key",
@@ -90,10 +94,6 @@
 			[
 				"bacgro",
 				"background-color"
-			],
-			[
-				"pa",
-				"padding-left"
 			],
 			[
 				"ba",
@@ -311,6 +311,30 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 2076,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style-old.css",
+			"settings":
+			{
+				"buffer_size": 1207,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style.css",
+			"settings":
+			{
+				"buffer_size": 1663,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -662,8 +686,100 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 2076,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								925,
+								925
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 215.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "style-old.css",
+					"settings":
+					{
+						"buffer_size": 1207,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "style.css",
+					"settings":
+					{
+						"buffer_size": 1663,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								467,
+								881
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

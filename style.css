@@ -88,3 +88,27 @@ div {
 	height: 100px;
 	background-color: white;
 }
+.popup {
+	position: absolute;
+	z-index: 999;
+	right: 200px;
+	top: 100px;
+	width: 500px;
+	height: 600px;
+	background: white;
+}
+.popup .title {
+	text-align: center;
+	margin-top: 20px;
+	font-size: 20px;
+	font-weight: bold;
+}
+.popup .text {
+	margin: 20px 30px;
+}
+.popup .picture {
+	border: 1px solid black;
+	width: 450px;
+	height: 300px;
+	margin: 0 auto;
+}
