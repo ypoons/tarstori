@@ -32,22 +32,65 @@
       }
       
       initialize();
-      var cities = {
-      'Groningen':  [ 53.216723950863425, 6.560211181640625, 8],
-      'Los Angeles': [ 34.01131647557699, -118.25599389648437, 8],
-      'New York City': [ 40.7143528, -74.0059731, 10]
-      };
 
-      $("#markers").on("click", ".map_link", function() {
-          /* "this" within handler is the actual element clciked*/
+    
 
-          /* find correct array from "cities" object */
-         var data=cities[ $(this).data('city') ]; /* returns array[ 53.21, 6.56, 4]*/
-          var laLatLng = new google.maps.LatLng(data[0],data[1]);
+
+// Zoom Animation 
+
+var ZOOMINCRIMENT = 1; // 1 or 2 only, 1 Slower(smooth animation), 2 Faster(rough animation) 
+var ZOOMFACTOR = 0.3; // 2.0 - 0.1 (Slower (rough animation), Faster (smooth animation)) 
+  function zoomIn(to) { 
+        if( map.getZoom() < to ) { 
+                map.setZoom(map.getZoom() + ZOOMINCRIMENT); 
+                setTimeout(function() {zoomIn(to);}, ZOOMFACTOR * 100); 
+        } 
+      } 
+        function zoomOut(to, laLatLng) { 
+        if( map.getZoom() > to ) { 
+                map.setZoom(map.getZoom() - ZOOMINCRIMENT); 
+                setTimeout(function() {zoomOut(to, laLatLng);}, ZOOMFACTOR * 100); 
+        } 
+        else {
           map.panTo(laLatLng);
-          map.setZoom( data[2]);
-       });
+          setTimeout(function() {zoomIn(6);}, 100); 
+          }
+      } 
 
+      // Tartalomjegyzék, ilyen sorrendben követik egymást a popupok ["a popup class neve", latitude, longitude]
+      var index = [
+       ["usa", 53.216723950863425, 6.560211181640625, 8],
+       ["usa-2", 34.01131647557699, -118.25599389648437, 8],
+       ["usa-3", 40.7143528, -74.0059731, 10]
+      ];
+
+      
+
+      // Itt tároljuk, hogy hol vagyunk épp
+      var currentIndex = 0;
+
+      // Itt töltjük be a következő popupot+térképet
+      function stepTo(i) {
+          $(".popup").fadeOut();
+          $("."+index[i]).fadeIn();
+          currentIndex = i;
+          /* find correct array from "cities" object */
+          var data=index[i]; /* returns array[ 53.21, 6.56, 4]*/
+          var laLatLng = new google.maps.LatLng(data[1],data[2]);
+          zoomOut(3, laLatLng);
+          
+      }
+
+                // $("#markers").on("click", ".map_link", function() { });
+      $(".next").click(function() {
+        stepTo(currentIndex+1);
+      });
+      $(".previous").click(function() {
+        stepTo(currentIndex-1);
+      });
+
+      // Első popup betöltése
+      stepTo(0);
 
     });
 
@@ -55,7 +98,6 @@
   </head>
   <body>
     <div id="markers">
-      <div class="map_link" data-city="New York City">Vissza</div>
       <div class="map_link" data-city="New York City">USA</div>
       <div class="map_link" data-city="Groningen">Európa</div>
       <div class="map_link" data-city="Los Angeles">Oroszország</div>
@@ -63,19 +105,26 @@
       <div class="map_link" data-city="Los Angeles">Irak-Irán</div>
       <div class="map_link" data-city="Los Angeles">Pakisztán-India</div>
       <div class="map_link" data-city="Los Angeles">Afrika</div>
-      <div class="map_link" data-city="New York City">Tovább</div>
     </div>
-    <div class="popup">
+    <div class="popup usa">
       <div class="title">USA</div>
-      <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-      <div class="picture"><img src=""></div>
+        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        <div class="picture"><img src="img/13l.jpg"></div>
+      </div>
+      <div class="popup usa-2">
+      <div class="title">USA | New York</div>
+        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        <div class="picture"><img src="img/13l.jpg"></div>
+      </div>
       <div class="positionwrap">
+          <a class="previous">Vissza</a>
           <div class="dot"></div>
           <div class="dot"></div>
           <div class="dot"></div>
           <div class="dot current"></div>
+          <a class="next">Tovább</a>
       </div>
-    </div>
+    
     <div id="map-canvas"/>
   </body>
 </html>

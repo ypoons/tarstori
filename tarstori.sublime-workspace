@@ -4,12 +4,32 @@
 		"selected_items":
 		[
 			[
+				"po",
+				"positionwrap"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"border",
+				"border-left"
+			],
+			[
 				"fon",
 				"font-weight"
 			],
 			[
-				"border",
-				"border"
+				"ma",
+				"margin-top"
 			],
 			[
 				"tex",
@@ -20,24 +40,12 @@
 				"padding"
 			],
 			[
-				"ma",
-				"margin"
-			],
-			[
 				"doc",
 				"document"
 			],
 			[
 				"font",
 				"font-weight"
-			],
-			[
-				"bac",
-				"background-color"
-			],
-			[
-				"mar",
-				"margin"
 			],
 			[
 				"back",
@@ -70,10 +78,6 @@
 			[
 				"restore",
 				"restoreg"
-			],
-			[
-				"bor",
-				"border-bottom"
 			],
 			[
 				"bord",
@@ -114,10 +118,6 @@
 			[
 				"get",
 				"getTitle"
-			],
-			[
-				"po",
-				"pointer"
 			],
 			[
 				"row",
@@ -315,15 +315,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 2076,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "style-old.css",
-			"settings":
-			{
-				"buffer_size": 1207,
+				"buffer_size": 3234,
 				"line_ending": "Unix"
 			}
 		},
@@ -331,7 +323,7 @@
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 1663,
+				"buffer_size": 2343,
 				"line_ending": "Unix"
 			}
 		}
@@ -420,6 +412,7 @@
 	},
 	"file_history":
 	[
+		"/Users/sevores/tarstori/style-old.css",
 		"/Volumes/Discourse/discourse/discourse/sublime-project",
 		"/Users/sevores/Desktop/untitled folder 3/revolve",
 		"/Applications/MAMP/htdocs/portfolio/js/portfolio.js",
@@ -694,15 +687,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 2076,
+						"buffer_size": 3234,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								925,
-								925
+								2956,
+								2956
 							]
 						],
 						"settings":
@@ -715,55 +708,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 215.0,
+						"translation.y": 290.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "style-old.css",
-					"settings":
-					{
-						"buffer_size": 1207,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "style.css",
 					"settings":
 					{
-						"buffer_size": 1663,
+						"buffer_size": 2343,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								467,
-								881
+								2211,
+								2211
 							]
 						],
 						"settings":
@@ -775,7 +738,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1033.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
