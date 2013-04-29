@@ -1,8 +1,7 @@
 html, body {
 	height:100%;
 	margin: 0; 
-    padding: 0 
-	text-rendering: optimizeLegibility !important;
+    padding: 0;
 	-moz-font-feature-settings:"liga=1,dlig=1";
 	-ms-font-feature-settings:liga,dlig;
 	-o-font-feature-settings:liga,dlig;
@@ -12,6 +11,7 @@ html, body {
 	image-rendering:optimizeQuality;
 	font-kerning: normal;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial;
+	text-rendering: optimizeLegibility !important;
 }
   #markers {
     position: absolute;
