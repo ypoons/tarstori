@@ -4,12 +4,32 @@
 		"selected_items":
 		[
 			[
-				"po",
-				"positionwrap"
+				"mar",
+				"margin-left"
 			],
 			[
-				"mar",
-				"margin"
+				"ba",
+				"background"
+			],
+			[
+				"bo",
+				"bottom"
+			],
+			[
+				"cur",
+				"currentIndex"
+			],
+			[
+				"ma",
+				"max-width"
+			],
+			[
+				"lat",
+				"laLatLng"
+			],
+			[
+				"po",
+				"positionwrap"
 			],
 			[
 				"bac",
@@ -26,10 +46,6 @@
 			[
 				"fon",
 				"font-weight"
-			],
-			[
-				"ma",
-				"margin-top"
 			],
 			[
 				"tex",
@@ -98,10 +114,6 @@
 			[
 				"bacgro",
 				"background-color"
-			],
-			[
-				"ba",
-				"background-position"
 			],
 			[
 				"inli",
@@ -315,7 +327,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 3234,
+				"buffer_size": 5132,
 				"line_ending": "Unix"
 			}
 		},
@@ -323,7 +335,7 @@
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 2343,
+				"buffer_size": 2690,
 				"line_ending": "Unix"
 			}
 		}
@@ -534,6 +546,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.3);",
 			".",
 			"-",
 			",",
@@ -660,8 +673,7 @@
 			"koncertek",
 			"lemezek",
 			"fest-alold",
-			".hirek .en",
-			"15px"
+			".hirek .en"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -679,7 +691,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -687,15 +699,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 3234,
+						"buffer_size": 5132,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2956,
-								2956
+								3339,
+								3339
 							]
 						],
 						"settings":
@@ -708,7 +720,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 290.0,
+						"translation.y": 1721.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -718,15 +730,15 @@
 					"file": "style.css",
 					"settings":
 					{
-						"buffer_size": 2343,
+						"buffer_size": 2690,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2211,
-								2211
+								55,
+								55
 							]
 						],
 						"settings":
@@ -738,7 +750,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1033.0,
+						"translation.y": 934.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
