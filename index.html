@@ -107,7 +107,15 @@ var ZOOMFACTOR = 0.3; // 2.0 - 0.1 (Slower (rough animation), Faster (smooth ani
           
       }
 
-                // $("#markers").on("click", ".map_link", function() { });
+       $("#markers").on("click", ".map_link", function() {
+        var data = $(this).data('city');
+          for( var i = 0, len = index.length; i < len; i++ ) {
+              if( index[i][0] === data ) {
+                  stepTo(i);
+                  break;
+              }
+          }
+       });
       $(".next").click(function() {
         stepTo(currentIndex+1);
       });
@@ -124,12 +132,13 @@ var ZOOMFACTOR = 0.3; // 2.0 - 0.1 (Slower (rough animation), Faster (smooth ani
   </head>
   <body>
     <div id="markers">
-      <div class="map_link" data-city="New York City">USA</div>
+      <div class="map_link" data-city="Oklahoma">USA</div>
       <div class="map_link" data-city="Groningen">Európa</div>
-      <div class="map_link" data-city="Los Angeles">Oroszország</div>
-      <div class="map_link" data-city="Los Angeles">Afghanisztán</div>
+      <div class="map_link" data-city="oroszorszag">Oroszország</div>
+      <div class="map_link" data-city="afghanisztan">Afghanisztán</div>
       <div class="map_link" data-city="Los Angeles">Irak-Irán</div>
-      <div class="map_link" data-city="Los Angeles">Pakisztán-India</div>
+      <div class="map_link" data-city="pakisztan">Pakisztán</div>
+      <div class="map_link" data-city="india">India</div>
       <div class="map_link" data-city="Los Angeles">Afrika</div>
     </div>
     <!-- USA -->
