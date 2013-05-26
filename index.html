@@ -59,22 +59,29 @@ var ZOOMFACTOR = 0.3; // 2.0 - 0.1 (Slower (rough animation), Faster (smooth ani
 
       // Tartalomjegyzék, ilyen sorrendben követik egymást a popupok ["a popup class neve", latitude, longitude]
       var index = [
+      //India
       ["india", 40.7143528, -74.0059731, 10],
       ["india-2", 40.7143528, -74.0059731, 10],
       ["india-3", 40.7143528, -74.0059731, 10],
       ["india-4", 40.7143528, -74.0059731, 10],
       ["india-5", 40.7143528, -74.0059731, 10],
+      ["india-6", 40.7143528, -74.0059731, 10],
+      // Pakisztán
       ["pakisztan", 40.7143528, -74.0059731, 10],
       ["pakisztan-2", 40.7143528, -74.0059731, 10],
       ["pakisztan-3", 40.7143528, -74.0059731, 10],
       ["pakisztan-4", 40.7143528, -74.0059731, 10],
-      ["usa", 53.216723950863425, 6.560211181640625, 8],
-      ["usa-2", 34.01131647557699, -118.25599389648437, 8],
-      ["usa-3", 40.7143528, -74.0059731, 10]
+      ["pakisztan-5", 40.7143528, -74.0059731, 10],
+      ["pakisztan-6", 40.7143528, -74.0059731, 10],
+      // USA
+      ["Oklahoma", 53.216723950863425, 6.560211181640625, 8],
+      ["USA-9/11-1", 53.216723950863425, 6.560211181640625, 8],
+      ["USA-9/11-2", 53.216723950863425, 6.560211181640625, 8],
+      ["USA-9/11-3", 53.216723950863425, 6.560211181640625, 8]
+
       ];
 
       
-
       // Itt tároljuk, hogy hol vagyunk épp
       var currentIndex = 0;
 
@@ -115,15 +122,35 @@ var ZOOMFACTOR = 0.3; // 2.0 - 0.1 (Slower (rough animation), Faster (smooth ani
       <div class="map_link" data-city="Los Angeles">Pakisztán-India</div>
       <div class="map_link" data-city="Los Angeles">Afrika</div>
     </div>
-    <div class="popup usa">
-      <div class="title">USA</div>
-        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-        <div class="picture"><img src="img/13l.jpg"></div>
+    <!-- USA -->
+   <div class="popup Oklahoma">
+      <div class="title">Oklahoma</div>
+      <div class="text"> 1995. április 15-én Oklahoma City hazai terrorista támadás szinhely volt. Timothy McVeigh és Terry Nichols az Alfred P. Murrah Federal Buildingközelében bombát robbantottak, amely 168 embert megölt közöttük 19 gyermeket. Timothy McVeigh-t halálra itélték, s az itéletet végrehajtották, Terry Nicholast 161 ember megöléséért életfogytiglani börtönbüntetésre itélték.
       </div>
-      <div class="popup usa-2">
-      <div class="title">USA | New York</div>
-        <div class="text">Lre magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea corem ipsum dolor situnt mollit anim id est laborum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut l esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt abore et doloommodo consequat. Duis aute irure dolor in reprehenderit in voluptate velitin culpa qui officia deser.</div>
-        <div class="picture"><img src="img/3l.jpg"></div>
+        <div class="picture"><img src="img/kb/Oklahoma1.jpg" /></div>
+         <div class="picture"><img src="img/kb/Oklahoma2.jpg" /></div>
+</div>
+<div class="popup USA-9/11-1">
+      <div class="title">WTC</div>
+      <div class="text"> A 2001 szeptember 11-ei támadásokat (más néven 9/11) az al-Kaida terrorszervezet négy összehangolt terrortámadást indított az Egyesült Államok területe ellen, ezek a területek New York és Washington DC volt.  Azon a reggelen 19 al-Kaida gépeltérítő szállt fel amerikai utasszállító repülőgépekre. Két repülőgépet az American Airlines Flight 11 (reggel 8:46kor) és az United Airlines Flight 175 (reggelt 9:03kor) szándékosan vezették bele a Wold Trade Center északi és a déli tornyába New Yorkban. Két órán belül mindkettő épület összeomlót környező WTC komplexumokban és épületekben jelentős kár keletkezett. 
+</div>
+        <div class="picture"><img src="img/kb/1.jpg" /></div>
+  <div class="picture"><img src="img/kb/2.jpg" /></div>
+
+</div>
+<div class="popup USA-9/11-2">
+      <div class="title">Pentagon és DC</div>
+      <div class="text"> A harmadik repülőgép az American Airlines 77-es (9:37kor) a Pentagonba csapódott ez a székhelye az Egyesült Államok Védelmi Minisztériumának. A Pentagonban okozott károkat egy éven belül kijavították, majd később a helyszínen megépítették a Pentagon Memorial emlékművet. A negyedik eltérített gépet United Airlines Flight 93 (10:03) egyes feltételezések szerint a terroristák a Fehér Házba irányították volna, de az utasok visszafoglalták, azonban már nem tudták megmenteni a lezuhanásról, az utasszállító repülő Washingtontól mindössze 15 percnyire, Pennsylvania államban, Shanksville mellett csapódott a földbe. 
+A repülőjáratok egyetlen utasa sem élte túl a támadásokat. A terrorakció folyamán géprablókkal együtt összesen 2995 ember vesztette életét. Az áldozatok túlnyomó többsége civil volt. Az Egyesült Államok válasza a terrorizmus elleni háború volt, melynek első eszköze Afganisztán megszállása volt. Így próbálták meg elkapni a tálibokat, akik al-Kaida tagokat rejtegettek.
+</div>
+        <div class="picture"><img src="img/kb/3.jpg" /></div>
+  <div class="picture"><img src="img/kb/4.jpg" /></div>
+  <div class="picture"><img src="img/kb/5.jpg" /></div>
+</div>
+
+<div class="popup USA-9/11-3">
+      <div class="title">Al-Kaida</div>
+      <div class="text">Az Al-Kaida egy 1988–ban megalakult iszlám terrorszervezet, amelyet a gazdag szaúd-arábiai vállalkozó, Oszáma bin Láden hozott létre a Szovjetunió ellen Afganisztánban harcolt veteránokból. Feltételezések szerint alvó ügynökei révén a világ 50–60 országában is jelen lehet. A szélsőséges iszlám ideológia alapján álló al-Kaida célja elsősorban az Egyesült Államok, de általában véve is a nyugati világ és Izrael, valamint a nyugatbarát iszlám országok meggyengítése, illetve megsemmisítése. Fennállása során több ezer terroristát képzett ki elsősorban afganisztáni táborokban. 1979-től maga Oszama bin Laden is részt vett az afganisztáni harcokban és a CIA megbízásából a szovjetek elleni ellenállás szervezésében. Később hathatósan támogatta a tálibokat. Az amerikaiak afganisztáni beavatkozása után tartózkodási hosszú éveken keresztül teljesen ismeretlen volt. Az al-Kaida szó arab eredetű, az „ülni” jelentésű kaada igéből képzett névszó, formailag nőnemű folyamatos melléknévi igenév. Mivel a nőnemű alakok többes számot is kifejezhetnek, így jelentése „ülők”. A szóalak azonban önálló főnévként is működik, itt jelentése: „alap”, „alapozás”. Az al-Kaidát az teszi különösen veszélyessé, hogy biztos anyagi hátterű, egymással laza összeköttetésben álló, meglehetősen önálló, nehezen felderíthető szervezetekből áll. Számos nagyon súlyos merényletért teszik felelőssé. Ezek közé tartozik például a New York-i Világkereskedelmi Központ elleni 1993-as robbantásos merénylet, az USA kenyai és tanzániai nagykövetségének 1998-as felrobbantása (225 halott, több száz sebesült), a Világkereskedelmi Központ elleni repülőgépes támadás 2001. szeptember 11-én (több ezer halott, illetve sebesült), és feltételezések szerint az al-Kaidának köze volt a 2004. március 11-i madridi robbantás-sorozathoz is. 2001. szeptember 11-én az al-Kaida eltérített 4 utasszállító repülőjáratot. Két gép a World Trade Center ikertornyaiba csapódott,egy pedig a Pentagon épületébe zuhant. A negyedik gép utasai megakadályozták hogy azt a géprablók, a Capitoliumba irányítsák, Pennsilvaniában zuhant le A World Trade Center elpusztult, a Pentagont azóta helyreállították. A terrorakció folyamán géprablókkal együtt összesen 3031 ember vesztette életét. Az áldozatok túlnyomó többsége civil volt. A géprablók a repülőgépekre felcsempészett szúrófegyverek segítségével ölték meg vagy tették hatástalanná a pilótákat, utaskísérőket és utasokat. Az eltérített gépekről indított telefonhívásokból tudhatjuk, hogy késeket használtak két esetben is. A támadást követően pár órával az FBI meg tudta nevezni a terroristákat, néhány esetben azok személyes ismertetőjegyeit is. Az egyiptomi Muhammad Atta volt a géprablók vezetője és a pilóták egyike. (A repülőgép vezetést az USA-ban tanulta meg, oktatója furcsállta is, hogy a landolás gyakorlására mennyire nem fektetett hangsúlyt.) Atta társaival együtt meghalt az akcióban, de poggyásza, mely nem került fel a gépre, felfedte a terrorista társainak személyazonosságát, és más terveket, részleteket és támadásuk hátterét is. A terroristák közül 15 fő Szaúd-Arábiából, kettő az Egyesült Arab Emírségekből, egy fő Egyiptomból és egy fő Libanonból származott. A George Washington University egy filozófia professzora és korábbi CIA ügynök, Jerrold Post szerint a támadók műveltek, vallásukat illetően teljesen eltökéltek voltak. A terrortámadásokat vizsgálók egyike volt az FBI is, melynek PENTTBOM kódnevű vizsgálata az iroda legnagyobb, legösszetettebb nyomozását folytatta le, melyben több mint 7000 különleges ügynök működött közre. Az USA kormánya az FBI állításával állapította meg, hogy a bin Láden által vezetett al-Kaida vállalta a felelősséget a támadásokért. Az Egyesült Királyság kormánya is hasonló következtetéseket vont le az al-Kaida és Oszáma bin Láden bűnösségét illetően. Az Egyesült Államok válasza a terrorizmus elleni háború volt, melynek első eszköze Afganisztán megszállása volt. Így próbálták meg elkapni a tálibokat, akik al-Kaida tagokat rejtegettek. A Pentagonban okozott károkat egy éven belül kijavították, majd később a helyszínen megépítették a Pentagon Memorial emlékművet. A World Trade Center helyszínén a romok eltakarítását követően elkezdődtek az újjáépítések.</div>
       </div>
 <!--  India / Pakisztán -->
 <div class="popup india">
@@ -140,42 +167,63 @@ var ZOOMFACTOR = 0.3; // 2.0 - 0.1 (Slower (rough animation), Faster (smooth ani
 <div class="popup india-3">
       <div class="title">India | 1993 Bombay robbantás sorozat</div>
       <div class="text">1993. március 12. –én tizenhárom egymást követő bomba robbant Bombay (ma Mumbai) városában. A merényletsorozat több mint 250 halálos áldozatot és 700 sebesültet követelt. A bombákat kocsikba rejtették, amik hotelek, bankok és irodaházak közelében robbantak fel. A merényleteket Dawood Ibrahim, a bombayi székhelyü, nemzetközi szervezetbűnözési testület (D-Company) vezetője irányította. Imbrahim jobbkeze, Tiger Memon szintén fő gyanúsított a merényeltek elkövetésében. Az összhangolt támadás az eddigi legsúlyosabb pokolgépes merénylet India történelmében.</div>
-      <div class="picture"><img src="img/1993_bombay_bombs.jpg"></div>
+      <div class="picture"><img src="img/1993_bombay_bombs2.jpg"></div>
 </div>
+
 <div class="popup india-4">
       <div class="title">India | 2008 Mumbai terrortámadás</div>
-      <div class="text">2008. november 26.-án háromnapos, tizenkettö összhangolt fegyveres és pokolgépes támadássorozat vette kezdetét India legnagyobb városában, Mumbaiban. Tíz felfegyverzett férfi megtámadott két mumbai luxushotelt (Oberoi Trident hotel és az ötcsillagos Taj Mahal Hotel, amely Mumbai egyik jelképe), egy vasútállomást, egy zsidó kulturális központot és egyéb célpontokat. Az összecsapások november 29-éig, szombat reggelig tartottak, amikor indiai kommandósok megölték a Taj Mahal Hotelt elfoglaló terroristákat. A merényletben 166-an vesztették életüket (köztük a 10 támadó is) és több mint 600-an megsebesültek. India a pakisztáni központú Lashkar-e-Taiba (A Tiszták Serege) szélsőséges iszlamista katonai csoportot tette felelőssé a támadásokért.</div>
+      <div class="text">2008. november 26.-án háromnapos, tizenkettö összehangolt fegyveres és pokolgépes támadássorozat vette kezdetét India legnagyobb városában, Mumbaiban. Tíz felfegyverzett férfi megtámadott két mumbai luxushotelt (Oberoi Trident hotel és az ötcsillagos Taj Mahal Hotel, amely Mumbai egyik jelképe), egy vasútállomást, egy zsidó kulturális központot és egyéb célpontokat. Az összecsapások november 29-éig, szombat reggelig tartottak, amikor indiai kommandósok megölték a Taj Mahal Hotelt elfoglaló terroristákat. A merényletben 166-an vesztették életüket (köztük a 10 támadó is) és több mint 600-an megsebesültek. India a pakisztáni központú Lashkar-e-Taiba (A Tiszták Serege) szélsőséges iszlamista katonai csoportot tette felelőssé a támadásokért.</div>
       <div class="picture"><img src="img/2008_mumbai_attacks.jpg"></div>
 </div>
 <div class="popup india-5">
       <div class="title">India | 2010 kelet-indiai vonatbaleset</div>
       <div class="text">2010. május 28-án egy Kalkuttából Mumbaiba tartó, utasokkal zsúfolt expresszvonat egy robbanás következtében kisiklott. A szerelvény 13 kocsija a másik sínpárra zuhant, ahol egy szemből érkező tehervonat belerohant. Az indiai vasúttársaság vezérigazgatója szerint a személyszállító vonaton pokolgép robbant föl, és emellett a síneket is megrongálták. A merényletben 148-an haltak meg és több mint 200-an megsérültek. Feltételezések szerint szélsőbaloldali lázadók követték el a támadást a vonat ellen. A katasztrófa Nyugat-Bengál szövetségi állam területén történt, egy olyan körzetben, amely köztudottan a maoista lázadók fellegvára.</div>
-      <div class="picture"><img src="img/2010_bengal_train.jpg"></div>
+      <div class="picture"><img src="img/2010_bengal_train2.jpg"></div>
+</div>
+<div class="popup india-6">
+      <div class="title">India | 2008 Dzsaipur robbantás sorozat</div>
+      <div class="text">2008. május 13-án robbantásos merényletek egész sorozatát követték el a turisták körében közkedvelt északnyugat-indiai Dzsaipur városában. A merényleteket a város piacain és egyéb zsúfolt közterein hajtották végre. A kilenc összehangolt bombarobbantásokat elsősorban motorkerékpárra felszerelt pokolgépekkel hajtották végre. Egy tizedik bombát is találtak, amit sikerült hatástalanítani. Az egyik robbanás Hanuman hindu majomisten temploma mellett történt. A kedd az istenség tiszteletére kijelölt nap, ezért a szentély tele volt imádkozó hívekkel. A merényletben 80-an meghaltak és 216-an megsérültek. A merényletekkel a Harakat ul-Jihad-i-Islami – HUJI (Az Iszlám Szent Háborújának Mozgalma) csoportot gyanusítják. Dzsaipur India egyik legrégibb turisztikai nevezetessége, főleg külföldiek körében kedvelt, történelmi levegőjű város.</div>
+      <div class="picture"><img src="img/2008_dzsaipur_bombs2.jpg"></div>
 </div>
 <div class="popup pakisztan">
       <div class="title">Pakisztán</div>
       <div class="text">Pakisztán (hivatalosan Pakisztáni Iszlám Köztársaság), független ázsiai állam a Közel-Kelet és Közép-Ázsia határán. Nyugaton Afganisztán és Irán, keleten India és északkeleten Kína határolja. Fővárosa Iszlámábád. Pakisztán a hatodik legnépesebb ország a világon és Indonézia után itt él a második legnagyobb muszlim közösség. Az önálló pakisztáni állam 1947. augusztus 17-én jött létre, az indiai brit uralom megszűntekor, India muzulmánok-lakta területeiből. Az ország függetlenségét 1947-ben kiáltották ki. Pandzsáb és Bengália tartomány ellentmondásos felosztásának hatására lázadások törtek ki Indiában és Pakisztánban is. Hinduk és szikhek milliói vándoroltak Indiába és muszlimok milliói Pakisztánba. 1947-től 1956-ig a brit Nemzetközösség domíniuma volt, azóta köztársaság. Az Indiától való különválást mindkét részről véres összecsapások követték, és nem sikerült rendezni a korábban önálló fejedelemség, Dzsammu és Kasmír hovatartozását sem. Az ország két, egymástól nagy földrajzi távolságra lévő részből állt, Nyugat-Pakisztánból és Kelet-Pakisztánból, amelyeket India választott el egymástól. A két országrészt csak a közös vallás kötötte össze.</div>
       <div class="picture"><img src="img/pakistan_lahore.jpg"></div>
 </div>
-
-
 <div class="popup pakisztan-2">
       <div class="title">Pakisztán | 2007 Karacsi bombarobbantás</div>
       <div class="text">2007. október 18-án csütörtök éjjel a pakisztáni Karacsiban két robbanás történt az önkéntes száműzetésből hazatérő Benazir Bhutto egykori miniszterelnököt éltető több százezres tömegben. A merényletben 139-en meghaltak és több mint 450-en megsebesültek. Az ellenzéki vezetőnek nem esett bántódása. Az al-Kaida terrorhálózathoz köthető szélsőségesek előzőleg Bhutto meggyilkolásával fenyegetőztek, amiért a politikus támogatásáról biztosította az Egyesült Államok által meghirdetett terrorizmus elleni küzdelmet.</div>
       <div class="picture"><img src="img/2007_karachi_bombs.jpg"></div>
 </div>
-
-
 <div class="popup pakisztan-3">
       <div class="title">Pakisztán | 2009 Pesavar bombarobbantás</div>
       <div class="text">2009. október 28-án a pakisztáni Pesavarban, egy nyüzsgő piacon robbantásos merényletet követtek el egy autóba rejtett, több mint egy mázsa robbanóanyagból készített pokolgéppel. Egy épület összeomlott, és több üzlet kigyulladt a detonáció következtében. A merényletben 117-en vesztették életüket és több mint 200-an megsebesültek. Egyelőre egyik terrorista csoport sem jelentkezett elkövetőként, de Pesavar már többször volt iszlamista lázadók merényleteinek színtere.</div>
       <div class="picture"><img src="img/2009_pesavar_bomb.jpg"></div>
 </div>
+
 <div class="popup pakisztan-4">
       <div class="title">Pakisztán | 2010 Lakki Marwat-i öngyilkos robbantás</div>
       <div class="text">2010. január 1-jén a Laki Marwat körzetben fekvő Shah Hassan Khel faluban öngyilkos robbantás történt. A robbantást egy öngyilkos merénylő hajtotta végre, mikor robbanószerekkel megpakolt sportautójával egy röplabdamérkőzést néző tömegbe hajtott. A merényletben 105-en meghaltak, és több mint 100-an megsérültek. Egyes elképzelések szerint a falu lakói azért váltak célponttá, mert a kormányzatot támogató, tálibellenes fegyveres csoportot állítottak fel. A támadás valószínűleg a tálibokkal hozható összefüggésbe, ám egyik csoport sem vállalta magára az akciót. A 2009. októberi peshwari robbantás óta ez volt a legvéresebb robbantás Pakisztánban.</div>
       <div class="picture"><img src="img/2010_lakki_bombs3.jpg"></div>
 </div>
+<div class="popup pakisztan-5">
+      <div class="title">Pakisztán | 2010 Jakagund öngyilkos robbantás</div>
+      <div class="text">2010. július 9-én az Afganisztánnal szomszédos, és az al-Kaida nemzetközi terrorhálózat egyik bázisának tartott törzsi területen lévő Jakagund falu piacterén kettős robbantásos merényletet követtek el. Két merénylő néhány másodperc különbséggel egy kisebb és egy nagyobb pokolgépet robbantott fel egy kormányhivatal előtt. Az egyik merénylő feltehetően motorral próbált behatolni a területre, amikor az első robbanás történt. A másik merénylő egy kisebb, bombával megpakolt teherautón érkezett. A robbantásokhoz TNT-t használtak. A robbanásoktól megrongálódott a helyi közigazgatás épülete, egy kis börtön és számos üzlet. Utóbbiból 28 rab megszökött a rendőrség szerint. A merényletben 104-en meghaltak és legalább 120-an megsérültek. A támadást a Tehrik-i-Taliban Pakistan (TTP) szervezet vállalta magára. A Pesavartól délre, hegyes vidéken lévő törzsi terület, ahol Jakagund falu is van, amerikai megítélés szerint egyaránt menedékhelye az al-Kaida tagjainak és a kabuli kormány ellen harcoló afganisztáni táliboknak.</div>
+      <div class="picture"><img src="img/2010_jakagund_bombs.jpg"></div>
+</div>
+<div class="popup pakisztan-6">
+      <div class="title">Pakisztán | 2010 Lahor támadások</div>
+      <div class="text">2010. május 28-án fegyveresek támadtak két mecsetre a pénteki ima után a kelet-pakisztáni Lahorban. A helyi rendőrség közölte, hogy tűzpárbaj alakult ki a rendvédelmi erők és a támadók között, s az egyik mecsetre kézigránátokat is dobtak. A két mecset néhány kilométerre van egymástól, és mindkettő egy kisebb muzulmán vallási szekta imahelye. Az egyik a 8 milliós nagyváros egyik előkelő negyedében (Garhi Sahu mecset), a másik pedig az egyik zsúfolt kerületében van (Model Town mecset). A Garhi Sahu mecsetbe behatoló merénylők szemtanúk szerint hívek százait ejtették fogságba. Ezen a helyszínen négy órán keresztül tartott az összecsapás, majd a robbanóanyaggal felszerelt merénylők levegőbe röpítették magukat. A merényletben 86-an meghaltak és több mint 120-an megsérültek. A merényleteket a pakisztáni tálibok vállalták magukra.</div>
+      <div class="picture"><img src="img/2010_lahor_attacks.jpg"></div>
+</div>
+
+
+<!-- Oroszország -->
+
+
+
+
+
       <div class="positionwrap">
           <a class="previous">Vissza</a>
           <div class="dot"></div>
