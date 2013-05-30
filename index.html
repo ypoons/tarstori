@@ -11,7 +11,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
 <link rel="stylesheet" type="text/css" media="all" href="style.css" />
     <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2HhfZxhkPY-XqXWXKg-CDmuVGWESw4zk&amp;sensor=true">
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2HhfZxhkPY-XqXWXKg-CDmuVGWESw4zk&amp;sensor=true&language=hu">
     </script>
     <script type="text/javascript">
       
@@ -24,7 +24,53 @@
           center: new google.maps.LatLng(48.160, -6.832),
           disableDefaultUI: true,
           zoom: 3,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          styles: [
+  {
+    "elementType": "geometry.stroke",
+    "stylers": [
+      { "color": "#e50707" },
+      { "visibility": "on" },
+      { "weight": 1 },
+      { "saturation": -43 }
+    ]
+  },{
+    "featureType": "water",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#405680" }
+    ]
+  },{
+    "featureType": "landscape",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#788080" },
+      { "saturation": -100 },
+      { "lightness": 41 }
+    ]
+  },{
+    "featureType": "administrative.province",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "road.highway",
+    "stylers": [
+      { "visibility": "on" },
+      { "saturation": -100 }
+    ]
+  },{
+    "featureType": "poi",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "lightness": -100 }
+    ]
+  }
+]
         };
     map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
@@ -45,78 +91,78 @@ var ZOOMFACTOR = 0.3; // 2.0 - 0.1 (Slower (rough animation), Faster (smooth ani
                 setTimeout(function() {zoomIn(to);}, ZOOMFACTOR * 100); 
         } 
       } 
-        function zoomOut(to, laLatLng) { 
+  function zoomOut(to, laLatLng, nextZoom) { 
         if( map.getZoom() > to ) { 
                 map.setZoom(map.getZoom() - ZOOMINCRIMENT); 
-                setTimeout(function() {zoomOut(to, laLatLng);}, ZOOMFACTOR * 100); 
+                setTimeout(function() {zoomOut(to, laLatLng, nextZoom);}, ZOOMFACTOR * 100); 
         } 
         else {
           map.panTo(laLatLng);
-          setTimeout(function() {zoomIn(5);}, 100); 
+          setTimeout(function() {zoomIn(nextZoom);}, 100); 
           }
-      } 
+  } 
 
       // Tartalomjegyzék, ilyen sorrendben követik egymást a popupok ["a popup class neve", latitude, longitude]
       var index = [
-	  // Kezdolap
-      ["welcome", 53.278353,-48.617249, 10],
-	  // USA
-      ["oklahoma", 35.437736, -97.470703, 10],
-      ["USA-9111", 40.734771, -74.268007, 10],
-      ["USA-9112", 38.891033, -77.522707, 10],
-      ["USA-9113", 39.571822, -108.200226, 10],
-	  // Európa
-      ["europa1", 48.632909, -10.507874, 10],
-      ["europa2", 48.632909, -10.507874, 10],
-      ["europa3", 40.426042, -8.823856, 10],
-      ["europa4", 40.426042, -8.823856, 10],
-      ["europa5", 55.37911, -9.561539, 10],
-      ["europa6", 55.37911, -9.561539, 10],
-	  ["europa7", 42.811522, 19.416962, 10],
+    // Kezdolap
+      ["welcome", 53.278353,-48.617249, 0],
+    // USA
+      ["oklahoma", 35.437736, -97.470703, 7],
+      ["USA-9111", 40.734771, -74.268007, 7],
+      ["USA-9112", 38.891033, -77.522707, 7],
+      ["USA-9113", 39.571822, -108.200226, 7],
+    // Európa
+      ["europa1", 48.632909, -10.507874, 7],
+      ["europa2", 48.632909, -10.507874, 7],
+      ["europa3", 40.426042, -8.823856, 7],
+      ["europa4", 40.426042, -8.823856, 7],
+      ["europa5", 55.37911, -9.561539, 7],
+      ["europa6", 55.37911, -9.561539, 7],
+      ["europa7", 42.811522, 19.416962, 7],
       // Oroszország
-      ["oroszorszag", 61.499113, 93, 10],
-      ["oroszorszag-2", 43.223191, 42.557859, 10],
-      ["oroszorszag-3", 55.9492, 29.128876, 10],
-      ["oroszorszag-4", 55.9492, 29.128876, 10],
-      ["oroszorszag-5", 61.499113, 93, 10],
-      ["oroszorszag-6", 44.809122, 39.104462, 10],
-      ["oroszorszag-7", 55.9492, 29.128876, 10],
-      ["oroszorszag-8", 43.484812, 39.876938, 10],
-      ["oroszorszag-9", 43.117024,41.680656, 10],
-	  // Afghanisztán
-	  ["af1", 33.394759,57.034149, 10],
-      ["af2", 33.394759,57.034149, 10],
-      ["af3", 33.394759,57.034149, 10],
-      ["af4", 33.394759,57.034149, 10],
-      ["af5", 33.394759,57.034149, 10],
-	  // Irak-Irán
-	  
-	  
-	  
-	  
-	  
-	  // Pakisztán
-      ["pakisztan", 25.045792, 62.442856, 10],
-      ["pakisztan-2", 25.045792, 62.442856, 10],
-      ["pakisztan-3", 25.045792, 62.442856, 10],
-      ["pakisztan-4", 25.045792, 62.442856, 10],
-      ["pakisztan-5", 25.045792, 62.442856, 10],
-      ["pakisztan-6", 25.045792, 62.442856, 10],
+      ["oroszorszag", 61.499113, 93, 7],
+      ["oroszorszag-2", 43.223191, 42.557859, 7],
+      ["oroszorszag-3", 55.9492, 29.128876, 7],
+      ["oroszorszag-4", 55.9492, 29.128876, 7],
+      ["oroszorszag-5", 61.499113, 93, 7],
+      ["oroszorszag-6", 44.809122, 39.104462, 7],
+      ["oroszorszag-7", 55.9492, 29.128876, 7],
+      ["oroszorszag-8", 43.484812, 39.876938, 7],
+      ["oroszorszag-9", 43.117024,41.680656, 7],
+    // Afghanisztán
+      ["af1", 33.394759,57.034149, 7],
+      ["af2", 33.394759,57.034149, 7],
+      ["af3", 33.394759,57.034149, 7],
+      ["af4", 33.394759,57.034149, 7],
+      ["af5", 33.394759,57.034149, 7],
+    // Irak-Irán
+    
+    
+    
+    
+    
+    // Pakisztán
+      ["pakisztan", 25.045792, 62.442856, 7],
+      ["pakisztan-2", 25.045792, 62.442856, 7],
+      ["pakisztan-3", 25.045792, 62.442856, 7],
+      ["pakisztan-4", 25.045792, 62.442856, 7],
+      ["pakisztan-5", 25.045792, 62.442856, 7],
+      ["pakisztan-6", 25.045792, 62.442856, 7],
       
-	  // India
-      ["india", 22.755921,73.111267, 10],
-      ["india-2", 22.755921,73.111267, 10],
-      ["india-3", 22.755921,73.111267, 10],
-      ["india-4", 22.755921,73.111267, 10],
-      ["india-5", 22.755921,73.111267, 10],
-      ["india-6", 22.755921,73.111267, 10],
-	  
-	  // Afrika
-      ["afrika", 5.441022, 2.25769, 10],
-      ["afrika1", 27.839076, 9.113159, 10],
-      ["afrika2", 0.175781, 31.613159, 10],
-      ["afrika3", 12.039321, 21.94519, 10],
-      ["afrika4", 5.441022, 2.25769, 10],
+    // India
+      ["india", 22.755921,73.111267, 7],
+      ["india-2", 22.755921,73.111267, 7],
+      ["india-3", 22.755921,73.111267, 7],
+      ["india-4", 22.755921,73.111267, 7],
+      ["india-5", 22.755921,73.111267, 7],
+      ["india-6", 22.755921,73.111267, 7],
+    
+    // Afrika
+      ["afrika", 5.441022, 2.25769, 7],
+      ["afrika1", 27.839076, 9.113159, 7],
+      ["afrika2", 0.175781, 31.613159, 7],
+      ["afrika3", 12.039321, 21.94519, 7],
+      ["afrika4", 5.441022, 2.25769, 7],
       
 
       ];
@@ -133,7 +179,7 @@ var ZOOMFACTOR = 0.3; // 2.0 - 0.1 (Slower (rough animation), Faster (smooth ani
           /* find correct array from "cities" object */
           var data=index[i]; /* returns array[ 53.21, 6.56, 4]*/
           var laLatLng = new google.maps.LatLng(data[1],data[2]);
-          zoomOut(3, laLatLng);
+          zoomOut(3, laLatLng, data[3]);
           
       }
 
@@ -165,20 +211,22 @@ var ZOOMFACTOR = 0.3; // 2.0 - 0.1 (Slower (rough animation), Faster (smooth ani
       <div class="map_link" data-city="oklahoma">USA</div>
       <div class="map_link" data-city="europa1">Európa</div>
       <div class="map_link" data-city="oroszorszag">Oroszország</div>
-      <div class="map_link" data-city="afghanisztan">Afghanisztán</div>
-      <div class="map_link" data-city="losangeles">Irak-Irán</div>
-      <div class="map_link" data-city="pakisztan">India-Pakisztán</div>
+      <div class="map_link" data-city="af1">Afghanisztán</div>
+      <div class="map_link" data-city="irak">Irak</div>
+      <div class="map_link" data-city="iran">Irán</div>
+      <div class="map_link" data-city="pakisztan">Pakisztán</div>
+      <div class="map_link" data-city="india">India</div>
       <div class="map_link" data-city="afrika">Afrika</div>
     </div>
-	
+  
 
-	<!-- Kezdőoldal -->
+  <!-- Kezdőoldal -->
 <div class="popup welcome">
-	<div class="title">Terror a világban</div>
-	<div class="text">BKF Társadalomtörténet 2. (2013 tavasz) - félésves csoportmunka<br><br>Témakörök között a fenti menüsor segítségével navigálhat, míg oldalanként a lenti két link segítségével tud léptetni.</div>
-	
+  <div class="title">Terror a világban</div>
+  <div class="text">BKF Társadalomtörténet 2. (2013 tavasz) - félésves csoportmunka<br><br>Témakörök között a fenti menüsor segítségével navigálhat, míg oldalanként a lenti két link segítségével tud léptetni.</div>
+  
 </div>
-	
+  
     <!-- USA -->
 <div class="popup oklahoma">
       <div class="title">USA | Oklahomai támadás</div>
@@ -202,76 +250,76 @@ var ZOOMFACTOR = 0.3; // 2.0 - 0.1 (Slower (rough animation), Faster (smooth ani
 <div class="popup USA-9113">
       <div class="title">USA | Al-Kaida és az USA</div>
       <div class="text">Az Al-Kaida egy 1988–ban megalakult iszlám terrorszervezet, amelyet a gazdag szaúd-arábiai vállalkozó, Oszáma bin Láden hozott létre a Szovjetunió ellen Afganisztánban harcolt veteránokból. Feltételezések szerint alvó ügynökei révén a világ 50–60 országában is jelen lehet. A szélsőséges iszlám ideológia alapján álló al-Kaida célja elsősorban az Egyesült Államok, de általában véve is a nyugati világ és Izrael, valamint a nyugatbarát iszlám országok meggyengítése, illetve megsemmisítése. Fennállása során több ezer terroristát képzett ki elsősorban afganisztáni táborokban. 1979-től maga Oszama bin Laden is részt vett az afganisztáni harcokban és a CIA megbízásából a szovjetek elleni ellenállás szervezésében. Később hathatósan támogatta a tálibokat. Az amerikaiak afganisztáni beavatkozása után tartózkodási hosszú éveken keresztül teljesen ismeretlen volt. Az al-Kaida szó arab eredetű, az „ülni” jelentésű kaada igéből képzett névszó, formailag nőnemű folyamatos melléknévi igenév. Mivel a nőnemű alakok többes számot is kifejezhetnek, így jelentése „ülők”. A szóalak azonban önálló főnévként is működik, itt jelentése: „alap”, „alapozás”. Az al-Kaidát az teszi különösen veszélyessé, hogy biztos anyagi hátterű, egymással laza összeköttetésben álló, meglehetősen önálló, nehezen felderíthető szervezetekből áll. Számos nagyon súlyos merényletért teszik felelőssé. Ezek közé tartozik például a New York-i Világkereskedelmi Központ elleni 1993-as robbantásos merénylet, az USA kenyai és tanzániai nagykövetségének 1998-as felrobbantása (225 halott, több száz sebesült), a Világkereskedelmi Központ elleni repülőgépes támadás 2001. szeptember 11-én (több ezer halott, illetve sebesült), és feltételezések szerint az al-Kaidának köze volt a 2004. március 11-i madridi robbantás-sorozathoz is. 2001. szeptember 11-én az al-Kaida eltérített 4 utasszállító repülőjáratot. Két gép a World Trade Center ikertornyaiba csapódott,egy pedig a Pentagon épületébe zuhant. A negyedik gép utasai megakadályozták hogy azt a géprablók, a Capitoliumba irányítsák, Pennsilvaniában zuhant le A World Trade Center elpusztult, a Pentagont azóta helyreállították. A terrorakció folyamán géprablókkal együtt összesen 3031 ember vesztette életét. Az áldozatok túlnyomó többsége civil volt. A géprablók a repülőgépekre felcsempészett szúrófegyverek segítségével ölték meg vagy tették hatástalanná a pilótákat, utaskísérőket és utasokat. Az eltérített gépekről indított telefonhívásokból tudhatjuk, hogy késeket használtak két esetben is. A támadást követően pár órával az FBI meg tudta nevezni a terroristákat, néhány esetben azok személyes ismertetőjegyeit is. Az egyiptomi Muhammad Atta volt a géprablók vezetője és a pilóták egyike. (A repülőgép vezetést az USA-ban tanulta meg, oktatója furcsállta is, hogy a landolás gyakorlására mennyire nem fektetett hangsúlyt.) Atta társaival együtt meghalt az akcióban, de poggyásza, mely nem került fel a gépre, felfedte a terrorista társainak személyazonosságát, és más terveket, részleteket és támadásuk hátterét is. A terroristák közül 15 fő Szaúd-Arábiából, kettő az Egyesült Arab Emírségekből, egy fő Egyiptomból és egy fő Libanonból származott. A George Washington University egy filozófia professzora és korábbi CIA ügynök, Jerrold Post szerint a támadók műveltek, vallásukat illetően teljesen eltökéltek voltak. A terrortámadásokat vizsgálók egyike volt az FBI is, melynek PENTTBOM kódnevű vizsgálata az iroda legnagyobb, legösszetettebb nyomozását folytatta le, melyben több mint 7000 különleges ügynök működött közre. Az USA kormánya az FBI állításával állapította meg, hogy a bin Láden által vezetett al-Kaida vállalta a felelősséget a támadásokért. Az Egyesült Királyság kormánya is hasonló következtetéseket vont le az al-Kaida és Oszáma bin Láden bűnösségét illetően. Az Egyesült Államok válasza a terrorizmus elleni háború volt, melynek első eszköze Afganisztán megszállása volt. Így próbálták meg elkapni a tálibokat, akik al-Kaida tagokat rejtegettek. A Pentagonban okozott károkat egy éven belül kijavították, majd később a helyszínen megépítették a Pentagon Memorial emlékművet. A World Trade Center helyszínén a romok eltakarítását követően elkezdődtek az újjáépítések.</div>
-	  <div class="picture"><img src="img/Oklahoma2.jpg" /></div>
+    <div class="picture"><img src="img/Oklahoma2.jpg" /></div>
 </div>
 <!-- Európa -->
 <div class="popup europa1">
-	<div class="title">Londoni robbantások (2005. július 7.)</div>
-	<div class="text">Halottak száma: 52 és több mint 700 sérült. <br>Az al-Kaida franchise-osodásának újabb bizonyítékaként Nagy-Britanniában született, Pakisztánban kiképzett terroristák csoportja hajt végre jól szervezett terrortámadást háztartási boltokban beszerezhető alapanyagokból összetákolt bombákkal közvetlen az után, hogy London az elnyerte a 2012-es olimpiai játékok rendezésének jogát. A terroristák három metrót és egy buszt robbantanak fel. A támadás 52 emberéletet követel, London élete egy napra teljesen megbénul. </div>
-	<div class="picture"><img src="img/london_1.jpg" /></div>
+  <div class="title">Londoni robbantások (2005. július 7.)</div>
+  <div class="text">Halottak száma: 52 és több mint 700 sérült. <br>Az al-Kaida franchise-osodásának újabb bizonyítékaként Nagy-Britanniában született, Pakisztánban kiképzett terroristák csoportja hajt végre jól szervezett terrortámadást háztartási boltokban beszerezhető alapanyagokból összetákolt bombákkal közvetlen az után, hogy London az elnyerte a 2012-es olimpiai játékok rendezésének jogát. A terroristák három metrót és egy buszt robbantanak fel. A támadás 52 emberéletet követel, London élete egy napra teljesen megbénul. </div>
+  <div class="picture"><img src="img/london_1.jpg" /></div>
 </div>
 <div class="popup europa2">
-	<div class="title">Londoni robbantások (2005. július 7.)</div>
-	<div class="text">A bombák egyenként 5 kilogramot nyomtak, ami azt bizonyítja, hogy az elkövetők nem mertek a jó terrorelhárítási technika miatt nagyobb méretű pokolgépeket gyártani.  A támadások után Nagy-Britannián eluralkodik a terrorpánik. Bár Tony Blair kormánya már az Egyesült Államokat ért támadások után szigorú biztonsági intézkedésekkel korlátozza a szabadságjogokat, a július 7-i merényletek után még hatékonyabb nyilvántartási és megfigyelési rendszerek bevezetését tervezik. A merényletek után számos webszájton az al-Kaida nemzetközi terrorszervezet vállalta magára a robbantásokat, de ezek hitelességét nem erosítették meg. A robbantás után elfogtak 3 embert, egyet pedig lelőlettek a hatóság emberei.A lelőtt brazil állampolgárról később kiderült, hogy nem volt köze a merénylethet. Ezután tüntetések kezdőttek Londonban. </div>
-	<div class="picture"><img src="img/london_2.jpg" /></div>
+  <div class="title">Londoni robbantások (2005. július 7.)</div>
+  <div class="text">A bombák egyenként 5 kilogramot nyomtak, ami azt bizonyítja, hogy az elkövetők nem mertek a jó terrorelhárítási technika miatt nagyobb méretű pokolgépeket gyártani.  A támadások után Nagy-Britannián eluralkodik a terrorpánik. Bár Tony Blair kormánya már az Egyesült Államokat ért támadások után szigorú biztonsági intézkedésekkel korlátozza a szabadságjogokat, a július 7-i merényletek után még hatékonyabb nyilvántartási és megfigyelési rendszerek bevezetését tervezik. A merényletek után számos webszájton az al-Kaida nemzetközi terrorszervezet vállalta magára a robbantásokat, de ezek hitelességét nem erosítették meg. A robbantás után elfogtak 3 embert, egyet pedig lelőlettek a hatóság emberei.A lelőtt brazil állampolgárról később kiderült, hogy nem volt köze a merénylethet. Ezután tüntetések kezdőttek Londonban. </div>
+  <div class="picture"><img src="img/london_2.jpg" /></div>
 </div>
 <div class="popup europa3">
-	<div class="title">Madridi vonatrobbantás (2004. március 11.)</div>
-	<div class="text">Áldozatok száma: 199 és több mint 1300 sérült <br> Napra pontosan két és fél évvel a 9/11-i támadások után az al-Kaida megint komoly szervezést igénylő, nagy pontossággal végrehajtott merényletsorozatot követ el, ezúttal a George W. Bush egyik legkitartóbb szövetségese, José Maria Aznar által kormányzott Spanyolországban. Madridban és elővárosaiban tíz, hátizsákba rejtett pokolgépet robbantanak négy különböző helyszínen, a városközpontba tartó vasútvonalakon, illetve a madridi pályaudvarokon. A merényletsorozatban 199-en vesztik életüket, csaknem 1500-an megsérülnek. A spanyol kormány egyből az ETA baszk terrorszervezetet gyanúsítja a robbantással és emellett annak ellenére is kitart, hogy az al-Kaida viszonylag hamar jelzi, az ő művük a támadás. Bin Laden terroristái a spanyol kormány az iraki háború melletti kiállását büntették.</div>
-	<div class="picture"><img src="img/madrid_1.jpg" /></div>
+  <div class="title">Madridi vonatrobbantás (2004. március 11.)</div>
+  <div class="text">Áldozatok száma: 199 és több mint 1300 sérült <br> Napra pontosan két és fél évvel a 9/11-i támadások után az al-Kaida megint komoly szervezést igénylő, nagy pontossággal végrehajtott merényletsorozatot követ el, ezúttal a George W. Bush egyik legkitartóbb szövetségese, José Maria Aznar által kormányzott Spanyolországban. Madridban és elővárosaiban tíz, hátizsákba rejtett pokolgépet robbantanak négy különböző helyszínen, a városközpontba tartó vasútvonalakon, illetve a madridi pályaudvarokon. A merényletsorozatban 199-en vesztik életüket, csaknem 1500-an megsérülnek. A spanyol kormány egyből az ETA baszk terrorszervezetet gyanúsítja a robbantással és emellett annak ellenére is kitart, hogy az al-Kaida viszonylag hamar jelzi, az ő művük a támadás. Bin Laden terroristái a spanyol kormány az iraki háború melletti kiállását büntették.</div>
+  <div class="picture"><img src="img/madrid_1.jpg" /></div>
 </div>
 <div class="popup europa4">
-	<div class="title">Madridi vonatrobbantás (2004. március 11.)</div>
-	<div class="text">A támadás katasztrofális következménnyel van Aznar politikai jövőjére, a kormányfő simán elbukja a márciusi választást, pedig a támadás előtt semmi esélye sem volt a győzelemre az új-baloldali José Luis Rodriguez Zapatero vezette Szocialista Pártnak. Zapatero szembefordul Bushsal, kivonja a spanyol csapatokat Irakból, ezzel bizonyítja, hogy a terroristák fenyegetéseikkel igenis célt érhetnek.</div>
-	<div class="picture"><img src="img/madrid_2.jpg" /></div>
+  <div class="title">Madridi vonatrobbantás (2004. március 11.)</div>
+  <div class="text">A támadás katasztrofális következménnyel van Aznar politikai jövőjére, a kormányfő simán elbukja a márciusi választást, pedig a támadás előtt semmi esélye sem volt a győzelemre az új-baloldali José Luis Rodriguez Zapatero vezette Szocialista Pártnak. Zapatero szembefordul Bushsal, kivonja a spanyol csapatokat Irakból, ezzel bizonyítja, hogy a terroristák fenyegetéseikkel igenis célt érhetnek.</div>
+  <div class="picture"><img src="img/madrid_2.jpg" /></div>
 </div>
 <div class="popup europa5">
-	<div class="title">Lockerbie-i katasztrófa (1988. december 21.)</div>
-	<div class="text">Robbantásos repülőgépkatasztrófa; Halottak száma: 270 (11 földön tartozkodó, akik a gép roncsaitól haltak meg) <br> A Pan Am 103-as járata a Pan American World Airways (Pan Am) harmadik menetrend szerinti transzatlanti járata volt London Heathrow és New York JFK repülőtere között. A repülőt a levegőben felrobbantották, roncsai a skóciai Lockerbie kisvárosára zuhantak. A katasztrófát követő nyomozás során kiderült, hogy a gép első rakterében egy 350-450 gramm közötti tömegű plasztikbomba robbant. A robbanás a gép szinte azonnali megsemmisüléséhez vezetett. A 130–190 km/h sebességű szél a roncsokat mintegy 130 km hosszan, 2189 km2 területen szórta szét.</div>
-	<div class="picture"><img src="img/lockerbie_1.jpg" /></div>
+  <div class="title">Lockerbie-i katasztrófa (1988. december 21.)</div>
+  <div class="text">Robbantásos repülőgépkatasztrófa; Halottak száma: 270 (11 földön tartozkodó, akik a gép roncsaitól haltak meg) <br> A Pan Am 103-as járata a Pan American World Airways (Pan Am) harmadik menetrend szerinti transzatlanti járata volt London Heathrow és New York JFK repülőtere között. A repülőt a levegőben felrobbantották, roncsai a skóciai Lockerbie kisvárosára zuhantak. A katasztrófát követő nyomozás során kiderült, hogy a gép első rakterében egy 350-450 gramm közötti tömegű plasztikbomba robbant. A robbanás a gép szinte azonnali megsemmisüléséhez vezetett. A 130–190 km/h sebességű szél a roncsokat mintegy 130 km hosszan, 2189 km2 területen szórta szét.</div>
+  <div class="picture"><img src="img/lockerbie_1.jpg" /></div>
 </div>
 <div class="popup europa6">
-	<div class="title">Lockerbie-i katasztrófa (1988. december 21.)</div>
-	<div class="text">A katasztrófának 21 országból összesen 270 áldozata volt (köztük 4 magyar állapolgár). A becsapódás utáni hetekben Lockerbie lakosai kénytelenek voltak elviselni az utcákon heverő holttesteket, mivel azokat a nyomozók az azonosítás miatt egyesével fozótak le, és vették őket a nyilvántartásukba. A halottak között volt 11 földön tartózkodó személy is, akik a repülőgép levállt szárnyának becsapódásától és tűzétől haltak meg. <br>A merénylet okai: 1986. április 15-én és 16-án amerikai harci gépek egy sor légitámadást intéztek a líbiai Tripoli és Bengázi ellen. Az Operation El Dorado Canyon névre hallgató hadművelet a második világháborút követően az első brit területről indított amerikai támadás. Célja a tíz nappal korábbi nyugat-berlini diszkóbombázás megtorlása volt. Az amerikai katonák által használt éjszakai szórakozóhely elleni merényletnek három halálos áldozata és 230 sebesültje volt.</div>
-	
-	<div class="picture"><img src="img/lockerbie_2.jpg" /></div>
+  <div class="title">Lockerbie-i katasztrófa (1988. december 21.)</div>
+  <div class="text">A katasztrófának 21 országból összesen 270 áldozata volt (köztük 4 magyar állapolgár). A becsapódás utáni hetekben Lockerbie lakosai kénytelenek voltak elviselni az utcákon heverő holttesteket, mivel azokat a nyomozók az azonosítás miatt egyesével fozótak le, és vették őket a nyilvántartásukba. A halottak között volt 11 földön tartózkodó személy is, akik a repülőgép levállt szárnyának becsapódásától és tűzétől haltak meg. <br>A merénylet okai: 1986. április 15-én és 16-án amerikai harci gépek egy sor légitámadást intéztek a líbiai Tripoli és Bengázi ellen. Az Operation El Dorado Canyon névre hallgató hadművelet a második világháborút követően az első brit területről indított amerikai támadás. Célja a tíz nappal korábbi nyugat-berlini diszkóbombázás megtorlása volt. Az amerikai katonák által használt éjszakai szórakozóhely elleni merényletnek három halálos áldozata és 230 sebesültje volt.</div>
+  
+  <div class="picture"><img src="img/lockerbie_2.jpg" /></div>
 </div>
 <div class="popup europa7">
-	<div class="title">Szófia, Bulgária | Szent Nedelja templomi robbantás (1925. Április 16.)</div>
-	<div class="text">Áldozatok száma: 150, sérültek kb. 500<br>A Szent Nedelya templomi robbantás egy szófiai templomban történt, ahol a Bolgár Kommunista Párt egy csoportja felrobbantotta az épület tetőszerkezetét. A robbantás Konsantin Georgiev tábornok temetése közben történt, aki a két nappal azelötti kommunista támadásban veszetette életét. A robbantást egy bizonyos Petar Abadzihev segétkezett, aki egy templomban dolgozó szerzetes volt. Az ő segítségével sikerült Asen Pavlovnak, a párt egy tagjának összesen 25 kilogram robbanószert a helyszínre szállíta.  A bombát végül egy csomagba a tetőtérben helyezték el, közvetlenül a fő dóm bejáratánál található tartóoszlop felső része mellé. A detonációt egy 15 méter hosszú kábel segítségével halytották végre, ami lehetővé tette, hogy ő maga ne sérüljön meg a robbantásban. A robbantás célpontja javarészt az ország elitje volt, politikusok és katonai vezetők. Csodával határos módon az összes párttag túlélte a terrorcselekményt, úgy ahogy III. Borisz cár is túlélte, mivel ő éppen azoknak az áldozatoknak a temetésén vett részt éppen, akik az ellene kitervelt robbantásban haltak meg két nappal azelőtt (ahol Georgiev is meghalt). Azonban az halottak közt volt több magas fokozatú katona, tábornok, a hadügyminiszer és az országos rendőrparancsnok is. </div>
-	<div class="picture"><img src="img/nedelja.jpg" /></div>
-</div>	
+  <div class="title">Szófia, Bulgária | Szent Nedelja templomi robbantás (1925. Április 16.)</div>
+  <div class="text">Áldozatok száma: 150, sérültek kb. 500<br>A Szent Nedelya templomi robbantás egy szófiai templomban történt, ahol a Bolgár Kommunista Párt egy csoportja felrobbantotta az épület tetőszerkezetét. A robbantás Konsantin Georgiev tábornok temetése közben történt, aki a két nappal azelötti kommunista támadásban veszetette életét. A robbantást egy bizonyos Petar Abadzihev segétkezett, aki egy templomban dolgozó szerzetes volt. Az ő segítségével sikerült Asen Pavlovnak, a párt egy tagjának összesen 25 kilogram robbanószert a helyszínre szállíta.  A bombát végül egy csomagba a tetőtérben helyezték el, közvetlenül a fő dóm bejáratánál található tartóoszlop felső része mellé. A detonációt egy 15 méter hosszú kábel segítségével halytották végre, ami lehetővé tette, hogy ő maga ne sérüljön meg a robbantásban. A robbantás célpontja javarészt az ország elitje volt, politikusok és katonai vezetők. Csodával határos módon az összes párttag túlélte a terrorcselekményt, úgy ahogy III. Borisz cár is túlélte, mivel ő éppen azoknak az áldozatoknak a temetésén vett részt éppen, akik az ellene kitervelt robbantásban haltak meg két nappal azelőtt (ahol Georgiev is meghalt). Azonban az halottak közt volt több magas fokozatú katona, tábornok, a hadügyminiszer és az országos rendőrparancsnok is. </div>
+  <div class="picture"><img src="img/nedelja.jpg" /></div>
+</div>  
 <!--  Afghanisztán -->
 <div class="popup af1">
-	<div class="title">Jaish-ul-Muslimin</div>
-	<div class="text">A szervezet valószínűsíthetően a volt tálib diktatúra 2001 után felmorzsolt ellenálló egységeinek néhány fegyvereséből alakult, akik terror- és szabotázs tevékenységek elkövetésével igyekeztek (és igyekeznek ma is) megakadályozni Afganisztán új rendszerének konszolidálódását. A Jaish-ul-Muslimin egyaránt ellenségeként tekint a „hitetlen betolakodókra” valamint az őket kiszolgáló afgán „árulókra”, akikre – mint mondják – „Allah könyörtelenül le fog csapni”. A mozgalom aktivitása meglehetősen hullámzó: először 2004-ben hajtottak végre merényleteket (négy ENSZ-alkalmazott meggyilkolása, három elrablása), majd hosszabb szünet után, mely alatt hivatalosan egyetlen akcióért sem vállalták a felelősséget, 2006 májusában újra támadtak, megölve egy általuk kémnek tartott civilt. Az amerikai titkosszolgálat értesülései szerint a Jaish-ul-Musliminnek maximum ötven tagja lehet, vezetőjük pedig egy volt tálib miniszter.</div>
-	<div class="picture"><img src="img/kepneve.jpg" /></div>
-</div>	
+  <div class="title">Jaish-ul-Muslimin</div>
+  <div class="text">A szervezet valószínűsíthetően a volt tálib diktatúra 2001 után felmorzsolt ellenálló egységeinek néhány fegyvereséből alakult, akik terror- és szabotázs tevékenységek elkövetésével igyekeztek (és igyekeznek ma is) megakadályozni Afganisztán új rendszerének konszolidálódását. A Jaish-ul-Muslimin egyaránt ellenségeként tekint a „hitetlen betolakodókra” valamint az őket kiszolgáló afgán „árulókra”, akikre – mint mondják – „Allah könyörtelenül le fog csapni”. A mozgalom aktivitása meglehetősen hullámzó: először 2004-ben hajtottak végre merényleteket (négy ENSZ-alkalmazott meggyilkolása, három elrablása), majd hosszabb szünet után, mely alatt hivatalosan egyetlen akcióért sem vállalták a felelősséget, 2006 májusában újra támadtak, megölve egy általuk kémnek tartott civilt. Az amerikai titkosszolgálat értesülései szerint a Jaish-ul-Musliminnek maximum ötven tagja lehet, vezetőjük pedig egy volt tálib miniszter.</div>
+  <div class="picture"><img src="img/kepneve.jpg" /></div>
+</div>  
 <div class="popup af2">
-	<div class="title">Abu Hafs al-Masri Brigád</div>
-	<div class="text">A szervezet az al-Kaida európai „megjelenítője”, valójában azonban semmiben sem különül el az Oszama bin Laden vezette globális terrorszervezettől. Formálisan az Abu Hafs al-Masri Brigád tagjai követték el a madridi és a londoni merényleteket, gyakorlatban azonban mind két akciót az al-Kaida tervezte, szervezte és finanszírozta. Az Abu Hafs elnevezés az al-Kaida hírhedt terroristájának, Mohammed Atefnek az egyik tiszteletbeli nevéből ered. (Ő tervelte ki a kenyai és a tanzániai amerikai követségek elleni merényleteket, valamint a „szomáliai akciót”, mely során amerikai katonákat mészároltak le, majd a holttesteket brutálisan megalázták és megcsonkították. 2001-ben Afganisztánban amerikai rakétatámadás végzett Ateffel.) Ugyan az Abu Hafs al-Masri Brigád esetleges önállóságának kérdését többen is felvetették, amikor a szervezet saját honlapján magára vállalta több európai nagyvárost sújtó áramszünetek előidézését, a szakértők egyöntetű véleménye szerint azonban a brigád ezernyi szállal kötődik az al-Kaidához, és valójában nincs önálló operatív vezetősége.</div>
-	<div class="picture"><img src="img/kepneve.jpg" /></div>
+  <div class="title">Abu Hafs al-Masri Brigád</div>
+  <div class="text">A szervezet az al-Kaida európai „megjelenítője”, valójában azonban semmiben sem különül el az Oszama bin Laden vezette globális terrorszervezettől. Formálisan az Abu Hafs al-Masri Brigád tagjai követték el a madridi és a londoni merényleteket, gyakorlatban azonban mind két akciót az al-Kaida tervezte, szervezte és finanszírozta. Az Abu Hafs elnevezés az al-Kaida hírhedt terroristájának, Mohammed Atefnek az egyik tiszteletbeli nevéből ered. (Ő tervelte ki a kenyai és a tanzániai amerikai követségek elleni merényleteket, valamint a „szomáliai akciót”, mely során amerikai katonákat mészároltak le, majd a holttesteket brutálisan megalázták és megcsonkították. 2001-ben Afganisztánban amerikai rakétatámadás végzett Ateffel.) Ugyan az Abu Hafs al-Masri Brigád esetleges önállóságának kérdését többen is felvetették, amikor a szervezet saját honlapján magára vállalta több európai nagyvárost sújtó áramszünetek előidézését, a szakértők egyöntetű véleménye szerint azonban a brigád ezernyi szállal kötődik az al-Kaidához, és valójában nincs önálló operatív vezetősége.</div>
+  <div class="picture"><img src="img/kepneve.jpg" /></div>
 </div>
 <div class="popup af3">
-	<div class="title">Iszlám Párt (Hizb-i-Islami, Hizbul-i-Islami)</div>
-	<div class="text">Az afganisztáni Iszlám Párt, mely aktív szerepet vállalt a szovjetek elleni gerillaharcban, valamikor a hetvenes évek közepén alakult. A szervezet a klasszikus szunnita-iszlám-fundamentalista ideológiát követő mozgalmak sorába tartozik. Természetesen a Hizb-i-Islami szoros kapcsolatban áll az Afganisztánban székelő al-Kaidaval is. A szovjet katonákkal vívott „felszabadító háború” idején még az Iszlám Párt volt a jelentősebb, mára azonban már a bin Laden vezette terrorhálózat egyik sejtjévé sorvadt a szervezet, mely a tálib uralom idején is csak néhány képviselőt küldhetett az állami vezetők közé. Az Iszlám Párt jelenlegi vezérének számító Khalid Farúki, a mozgalom legfőbb céljának a megszállók kiűzését és az afgán iszlám állam visszaállítását tartja. A szervezet több merényletért is közvetlenül felelős, habár a legtöbb akciót nem önállóan, hanem a „tálib harcosokkal” együtt hajtják végre.</div>
-	<div class="picture"><img src="img/kepneve.jpg" /></div>
+  <div class="title">Iszlám Párt (Hizb-i-Islami, Hizbul-i-Islami)</div>
+  <div class="text">Az afganisztáni Iszlám Párt, mely aktív szerepet vállalt a szovjetek elleni gerillaharcban, valamikor a hetvenes évek közepén alakult. A szervezet a klasszikus szunnita-iszlám-fundamentalista ideológiát követő mozgalmak sorába tartozik. Természetesen a Hizb-i-Islami szoros kapcsolatban áll az Afganisztánban székelő al-Kaidaval is. A szovjet katonákkal vívott „felszabadító háború” idején még az Iszlám Párt volt a jelentősebb, mára azonban már a bin Laden vezette terrorhálózat egyik sejtjévé sorvadt a szervezet, mely a tálib uralom idején is csak néhány képviselőt küldhetett az állami vezetők közé. Az Iszlám Párt jelenlegi vezérének számító Khalid Farúki, a mozgalom legfőbb céljának a megszállók kiűzését és az afgán iszlám állam visszaállítását tartja. A szervezet több merényletért is közvetlenül felelős, habár a legtöbb akciót nem önállóan, hanem a „tálib harcosokkal” együtt hajtják végre.</div>
+  <div class="picture"><img src="img/kepneve.jpg" /></div>
 </div>
 <div class="popup af4">
-	<div class="title"> Al-Kaida (a bázis)</div>
-	<div class="text">Az al-Kaida 2001. szeptember 11-én egy új korszakot indított el a terrorizmus történetében, melyet a legtöbb szakértő a „mega” jelzővel illet. A New-York-i ikertornyok, illetőleg a washingtoni Pentagon épülete elleni támadás minden eddigit felülmúló rombolásával, rengeteg áldozatával és mediatizált jellegével a terrorizmust globális problémává léptette elő, a korábbi regionális megközelítés helyett. 2001. szeptember 11-e sorsfordító dátumnak számít, azonban az al-Kaida fanatista nyugat-ellenes tevékenysége már korábban elkezdődött. A mozgalom szellemi atyjaként számon tartott Oszama bin Laden a nyolcvanas évek elején dúló szovjet-afgán háborúban, a lázadó mudzsahedinek egyik vezető személyiségeként szerzett magának hírnevet. A sors furcsa fintora, hogy a harcos muzulmánok egyik legkitartóbb támogatója akkoriban – geopolitikai megfontolások miatt – az Egyesült Államok volt, az az állam, amely most a nyugati civilizáció megtestesítőjeként, a terroristák legfőbb ellenségének számít. Maga az al-Kaida valamikor a nyolcvanas évek végén, a szovjetek afganisztáni kivonulásával párhuzamosan alakult meg. Vallott ideológiája sok pontban egyezik az iráni forradalom alapeszméivel, annak egyfajta szunnita magyarázatát adja. Társadalom- és államfelfogásának középpontjába a Korán, a saría, valamint a különböző hagyományok (Hadith) állnak. Dzsihádista eszméinek alapját a Nyugat – vélt vagy valós – civilizációs dominanciája adja, amely, érvelésük szerint, alapjaiban fenyegeti a muzulmán világ kulturális és vallási létét, Allah megkérdőjelezhetetlen felsőbbrendűségét. Mindezek értelmében az al-Kaida tulajdonképpen az iszlám fundamentalizmus egy speciális, „védekező dzsihádista” interpretációjának a legfőbb terjesztője, amely ma már tömeges bázist tudhat maga mögött valamennyi muzulmán közösségben, legyen az a Közel-Keleten, Afrikában, Európában vagy Amerikában. A kiépített globális hálózat fő mozgatórugói a fanatista tanítások, melyek elsajátításával, közvetlen ösztönzés nélkül, támadásra kész terrorista sejtek alakulnak szerte a világban. A fejlett kommunikációs és pénzügyi rendszereket kihasználva a személyesség jelentősége lecsökkent, csakúgy, mint a kiképzésé. Az internet és a mobiltelefonok adta lehetőségek birtokában manapság már könnyedén beszerezhetők és különösebb szaktudás nélkül összeszerelhetők a robbanóeszközök és egyéb fegyverek.</div>
-	<div class="picture"><img src="img/kepneve.jpg" /></div>
+  <div class="title"> Al-Kaida (a bázis)</div>
+  <div class="text">Az al-Kaida 2001. szeptember 11-én egy új korszakot indított el a terrorizmus történetében, melyet a legtöbb szakértő a „mega” jelzővel illet. A New-York-i ikertornyok, illetőleg a washingtoni Pentagon épülete elleni támadás minden eddigit felülmúló rombolásával, rengeteg áldozatával és mediatizált jellegével a terrorizmust globális problémává léptette elő, a korábbi regionális megközelítés helyett. 2001. szeptember 11-e sorsfordító dátumnak számít, azonban az al-Kaida fanatista nyugat-ellenes tevékenysége már korábban elkezdődött. A mozgalom szellemi atyjaként számon tartott Oszama bin Laden a nyolcvanas évek elején dúló szovjet-afgán háborúban, a lázadó mudzsahedinek egyik vezető személyiségeként szerzett magának hírnevet. A sors furcsa fintora, hogy a harcos muzulmánok egyik legkitartóbb támogatója akkoriban – geopolitikai megfontolások miatt – az Egyesült Államok volt, az az állam, amely most a nyugati civilizáció megtestesítőjeként, a terroristák legfőbb ellenségének számít. Maga az al-Kaida valamikor a nyolcvanas évek végén, a szovjetek afganisztáni kivonulásával párhuzamosan alakult meg. Vallott ideológiája sok pontban egyezik az iráni forradalom alapeszméivel, annak egyfajta szunnita magyarázatát adja. Társadalom- és államfelfogásának középpontjába a Korán, a saría, valamint a különböző hagyományok (Hadith) állnak. Dzsihádista eszméinek alapját a Nyugat – vélt vagy valós – civilizációs dominanciája adja, amely, érvelésük szerint, alapjaiban fenyegeti a muzulmán világ kulturális és vallási létét, Allah megkérdőjelezhetetlen felsőbbrendűségét. Mindezek értelmében az al-Kaida tulajdonképpen az iszlám fundamentalizmus egy speciális, „védekező dzsihádista” interpretációjának a legfőbb terjesztője, amely ma már tömeges bázist tudhat maga mögött valamennyi muzulmán közösségben, legyen az a Közel-Keleten, Afrikában, Európában vagy Amerikában. A kiépített globális hálózat fő mozgatórugói a fanatista tanítások, melyek elsajátításával, közvetlen ösztönzés nélkül, támadásra kész terrorista sejtek alakulnak szerte a világban. A fejlett kommunikációs és pénzügyi rendszereket kihasználva a személyesség jelentősége lecsökkent, csakúgy, mint a kiképzésé. Az internet és a mobiltelefonok adta lehetőségek birtokában manapság már könnyedén beszerezhetők és különösebb szaktudás nélkül összeszerelhetők a robbanóeszközök és egyéb fegyverek.</div>
+  <div class="picture"><img src="img/kepneve.jpg" /></div>
 </div>
 <div class="popup af5">
-	<div class="title">Al-Kaida (a bázis)</div>
-	<div class="text">Az al-Kaida alig harmincéves történetét vizsgálva több rendkívül súlyos merénylettel találkozunk a 2001. szeptember 11-i támadássorozaton kívül is. Ezek közül az elsőt (bár sokan inkább a WTC elleni 1993-as merényletet említenék) 1995 novemberében Rijádban, Szaúd-Arábia fővárosában követték el, amely az USA-val való kapcsolata miatt az al-Kaida egyik fő ellenségének számít. A célpont egy, az amerikai hadsereg által is használt katonai bázis volt, ahol egy robbanóanyaggal megrakott kisbusz repítettek a levegőbe. Összesen heten haltak meg (köztük öt amerikai állampolgár).
+  <div class="title">Al-Kaida (a bázis)</div>
+  <div class="text">Az al-Kaida alig harmincéves történetét vizsgálva több rendkívül súlyos merénylettel találkozunk a 2001. szeptember 11-i támadássorozaton kívül is. Ezek közül az elsőt (bár sokan inkább a WTC elleni 1993-as merényletet említenék) 1995 novemberében Rijádban, Szaúd-Arábia fővárosában követték el, amely az USA-val való kapcsolata miatt az al-Kaida egyik fő ellenségének számít. A célpont egy, az amerikai hadsereg által is használt katonai bázis volt, ahol egy robbanóanyaggal megrakott kisbusz repítettek a levegőbe. Összesen heten haltak meg (köztük öt amerikai állampolgár).
 1998. augusztus 7-én az al-Kaida Afrikában csapott le: Tanzánia és Kenya amerikai követségi épületeinél néhány perc eltéréssel bomba robbant. A két akcióban összesen 224-en vesztették életüket (többségében afrikai személyek), a sebesültek száma meghaladta az 5000-et.
 2000. október 12-én a Jemenben állómásozó USS Cole hadihajót érte rakétatalálat, tizenhét tengerész halt meg.
 2002 áprilisában a tunéziai Djerba szigetén, egy zsinagógában robbant gáztartályra szerelt pokolgép, 15-en vesztették életüket. Novemberben, Kenyában egy izraeli tulajdonú szálloda halljában robbantotta fel magát egy öngyilkos merénylő (13 áldozat).
 2003. május elején újra Szaúd-Arábia vált célponttá (négy támadásban 34 ember halt meg, köztük sok amerikai állampolgár), majd november 15-én Isztambulban hajtottak végre öngyilkos támadást (25 halott és legkevesebb 200 sebesült).
 2004. március 11-én Spanyolország történetének legsúlyosabb merényletében (összesen tíz detonációban) 191 ember vesztette életét, a sebesültek száma elérte az 1700-at. Májusban egy szaúdi olajvállalat 24 – főleg külföldi – tagját mészárolták le az al-Kaida fegyveresei.
 2005. július 7-én pedig Londonban hajtottak végre öngyilkos támadást. A hátizsákokban elhelyezett bombákat a metróban, illetőleg egy városi buszon hozták működésbe az Angliában született merénylők. Összesen 37 ember vesztette életét.</div>
-	<div class="picture"><img src="img/kepneve.jpg" /></div>
+  <div class="picture"><img src="img/kepneve.jpg" /></div>
 </div>
 <!--  Irak-Irán -->
 
@@ -343,84 +391,84 @@ var ZOOMFACTOR = 0.3; // 2.0 - 0.1 (Slower (rough animation), Faster (smooth ani
 <!-- Oroszország -->
 
 <div class="popup oroszorszag">
-	<div class="title">Oroszország</div>
-	<div class="text">Az Oroszországi Föderáció vagy röviden Oroszország Európa keleti részétõl Észak-Ázsia (Szibéria) keleti partjáig, a Csendes-óceánig terjedõ ország. A Föld legnagyobb területû állama, atomhatalom. Fõvárosa Moszkva. 17 075 400 km?-es területével a világ legnagyobb országának számít, majdnem kétszer beleférne Kanada vagy az USA; Magyarország területének több mint 180-szorosa. Lakóinak száma szerint a kilencedik legnépesebb, megelõzi Kína, India, az USA, Indonézia, Brazília, Pakisztán, Banglades és Nigéria. Fennhatósága alá tartozik a Kalinyingrádi terület nevû exklávé is. A következõ országokkal határos szárazföldön: Norvégia, Finnország, Észtország, Lettország, Fehéroroszország, Ukrajna, Grúzia, Azerbajdzsán, Kazahsztán, Kína, Mongólia, Észak-Korea. Kalinyingrádi területének pedig Litvánia és Lengyelország a szomszédja. Oroszország északon végignyúlik Eurázsia legnagyobb részén, ezenkívül sarki terület is tartozik hozzá. A kedvezõtlen idõjárási viszonyok miatt kis népsûrûséggel, viszonylag kis gazdasági szereppel, de nagy méretei miatt hihetetlen éghajlati változékonysággal rendelkezik.</div>
-	<div class="picture"><img src="img/01-oroszorszag.jpg"></div>
+  <div class="title">Oroszország</div>
+  <div class="text">Az Oroszországi Föderáció vagy röviden Oroszország Európa keleti részétõl Észak-Ázsia (Szibéria) keleti partjáig, a Csendes-óceánig terjedõ ország. A Föld legnagyobb területû állama, atomhatalom. Fõvárosa Moszkva. 17 075 400 km?-es területével a világ legnagyobb országának számít, majdnem kétszer beleférne Kanada vagy az USA; Magyarország területének több mint 180-szorosa. Lakóinak száma szerint a kilencedik legnépesebb, megelõzi Kína, India, az USA, Indonézia, Brazília, Pakisztán, Banglades és Nigéria. Fennhatósága alá tartozik a Kalinyingrádi terület nevû exklávé is. A következõ országokkal határos szárazföldön: Norvégia, Finnország, Észtország, Lettország, Fehéroroszország, Ukrajna, Grúzia, Azerbajdzsán, Kazahsztán, Kína, Mongólia, Észak-Korea. Kalinyingrádi területének pedig Litvánia és Lengyelország a szomszédja. Oroszország északon végignyúlik Eurázsia legnagyobb részén, ezenkívül sarki terület is tartozik hozzá. A kedvezõtlen idõjárási viszonyok miatt kis népsûrûséggel, viszonylag kis gazdasági szereppel, de nagy méretei miatt hihetetlen éghajlati változékonysággal rendelkezik.</div>
+  <div class="picture"><img src="img/01-oroszorszag.jpg"></div>
 </div>
-	<div class="popup oroszorszag-2">
-	<div class="title"> A beszláni túszdráma</div>
-	<div class="text">A beszláni túszdráma vagy beszláni vérengzés egy több mint 1100 ember túszul ejtésével kezdõdõ túszdráma volt, amely három nap múlva ért véget több mint 300 ember halálát okozva. 2004. szeptember 1-jén kezdõdött, amikor egy fõként ingus és csecsen fegyveresekbõl álló csoport több mint 1100 embert, köztük 777 gyereket ejtett túszul az Oroszország Észak-Kaukázus régiójában, Észak-Oszétiában fekvõ Beszlán 1. számú iskolájában. A túszejtést végrehajtó, Samil Baszajev szeparatista csecsen hadúr küldte csoport a Második csecsen háború befejezését követelte. Három napi patthelyzet után az orosz biztonsági erõk megrohamozták az épületet harckocsikat, gyújtórakétákat és más nehézfegyvereket is bevetve. Az iskolát robbanások sorozata rázta meg, amelyet tûz, valamint a túszejtõk és az orosz biztonsági erõk közötti kaotikus tûzharc követett. Végül legalább 334 túsz halt meg, köztük 186 gyerek; ezen kívül több százan megsérültek és sokan eltûntek. </div>
-	<div class="picture"><img src="img/02-beszlan.jpg"></div>
+  <div class="popup oroszorszag-2">
+  <div class="title"> A beszláni túszdráma</div>
+  <div class="text">A beszláni túszdráma vagy beszláni vérengzés egy több mint 1100 ember túszul ejtésével kezdõdõ túszdráma volt, amely három nap múlva ért véget több mint 300 ember halálát okozva. 2004. szeptember 1-jén kezdõdött, amikor egy fõként ingus és csecsen fegyveresekbõl álló csoport több mint 1100 embert, köztük 777 gyereket ejtett túszul az Oroszország Észak-Kaukázus régiójában, Észak-Oszétiában fekvõ Beszlán 1. számú iskolájában. A túszejtést végrehajtó, Samil Baszajev szeparatista csecsen hadúr küldte csoport a Második csecsen háború befejezését követelte. Három napi patthelyzet után az orosz biztonsági erõk megrohamozták az épületet harckocsikat, gyújtórakétákat és más nehézfegyvereket is bevetve. Az iskolát robbanások sorozata rázta meg, amelyet tûz, valamint a túszejtõk és az orosz biztonsági erõk közötti kaotikus tûzharc követett. Végül legalább 334 túsz halt meg, köztük 186 gyerek; ezen kívül több százan megsérültek és sokan eltûntek. </div>
+  <div class="picture"><img src="img/02-beszlan.jpg"></div>
 </div>
-	<div class="popup oroszorszag-3">
-	<div class="title"> Az 1999-es orosz lakótelepi bombarobbantások </div>
-	<div class="text">Az 1999-es orosz lakótelepi bombarobbantások egy robbantássorozat volt, mely négy panelházat rongált meg az orosz Bujnakszk, Moszkva és Volgodonszk városokban 1999. szeptemberében. 293 halálos áldozatot, és 651 sérültet követelt. Bujnakszk-ban szeptember 4-én, Moszkvában 9-én, Volgodonszk-ban pedig szeptember 16-án történtek robbantások. Számos bombát sikerült hatástalanítani ebben az idõben Moszkvában. Hasonló bombát találtak, majd hatástalanítottak az orosz Ryazan-ban 1999. szeptember 22-én. Két nappal késõbb Nikolai Patrushev különleges ügynök bejelentette, hogy a ryazani incidens csupán katonai gyakorlat volt. Ez Alexander Litvinenko (aki késõbb egy rádiaktív izotóp által lelte halálát) és Anna Politovskaya azon elméletének támogatásához vezetett, hogy a lakótelepi bombázásokat az orosz titkosszolgálat tervelte ki.</div>
+  <div class="popup oroszorszag-3">
+  <div class="title"> Az 1999-es orosz lakótelepi bombarobbantások </div>
+  <div class="text">Az 1999-es orosz lakótelepi bombarobbantások egy robbantássorozat volt, mely négy panelházat rongált meg az orosz Bujnakszk, Moszkva és Volgodonszk városokban 1999. szeptemberében. 293 halálos áldozatot, és 651 sérültet követelt. Bujnakszk-ban szeptember 4-én, Moszkvában 9-én, Volgodonszk-ban pedig szeptember 16-án történtek robbantások. Számos bombát sikerült hatástalanítani ebben az idõben Moszkvában. Hasonló bombát találtak, majd hatástalanítottak az orosz Ryazan-ban 1999. szeptember 22-én. Két nappal késõbb Nikolai Patrushev különleges ügynök bejelentette, hogy a ryazani incidens csupán katonai gyakorlat volt. Ez Alexander Litvinenko (aki késõbb egy rádiaktív izotóp által lelte halálát) és Anna Politovskaya azon elméletének támogatásához vezetett, hogy a lakótelepi bombázásokat az orosz titkosszolgálat tervelte ki.</div>
 <div class="picture"><img src="img/03-panel.jpg"></div>
 </div>
-	<div class="popup oroszorszag-4">
-	<div class="title">A moszkvai színházi túszdráma</div>
-	<div class="text">A moszkvai színházi túszdráma, másnéven a 2002-es Nord-Ost vérengzés során a zsúfolt Dubrovka színházat 2002. október 23-án elfoglalta 40-50 felfegyverzett csecsen terrorista, akik az Iszlámista mititarista szeparatista mozgalom tagjai voltak Csecsenföldön.  850 túszt ejtettek, és az orosz katonai erõk kivonását követelték Csecsenföldrõl, és a második csecsen háború végét. Az ostromot Movszar Barajev vezette. Két és fél napos ostrom után, az orosz különleges egység ismeretlen kémiai anyagot juttatott be az épület szellõzõrendszerébe, és megtámadta azt. A támadás során mind a negyven támadó életét vesztette az orosz alakulatok által, és körülbelül 130 túsz vesztette életét a gáz miatt (ezek közt kilenc külföldi származású). Kettõ kivételével az összes áldozat halálát a fegyveresek elhárítása céljából a színházba juttatott mérgezõ anyag okozta. A gáz használata széles körben elutasítást váltott ki, de Moszkva ragaszkodott hozzá, hogy csekély lehetõség maradt a hadmûvelet kidolgozására, mivel annak lehetõségével kellett szembenézniük, hogy 50 fegyveres lázadó saját maguk és túszaik megölésével fenyegetõzött. Moszkvai orvosok elítélték a tényt, hogy nem voltak hajlandóak tisztázni a bejuttatott gáz pontos eredetét, ami megakadályozta, hogy több életet mentsenek meg. Viszont néhány jelentés szerint a naloxon nevezetû szer segítségével sikerült pár túszt megmenteni.</div>
+  <div class="popup oroszorszag-4">
+  <div class="title">A moszkvai színházi túszdráma</div>
+  <div class="text">A moszkvai színházi túszdráma, másnéven a 2002-es Nord-Ost vérengzés során a zsúfolt Dubrovka színházat 2002. október 23-án elfoglalta 40-50 felfegyverzett csecsen terrorista, akik az Iszlámista mititarista szeparatista mozgalom tagjai voltak Csecsenföldön.  850 túszt ejtettek, és az orosz katonai erõk kivonását követelték Csecsenföldrõl, és a második csecsen háború végét. Az ostromot Movszar Barajev vezette. Két és fél napos ostrom után, az orosz különleges egység ismeretlen kémiai anyagot juttatott be az épület szellõzõrendszerébe, és megtámadta azt. A támadás során mind a negyven támadó életét vesztette az orosz alakulatok által, és körülbelül 130 túsz vesztette életét a gáz miatt (ezek közt kilenc külföldi származású). Kettõ kivételével az összes áldozat halálát a fegyveresek elhárítása céljából a színházba juttatott mérgezõ anyag okozta. A gáz használata széles körben elutasítást váltott ki, de Moszkva ragaszkodott hozzá, hogy csekély lehetõség maradt a hadmûvelet kidolgozására, mivel annak lehetõségével kellett szembenézniük, hogy 50 fegyveres lázadó saját maguk és túszaik megölésével fenyegetõzött. Moszkvai orvosok elítélték a tényt, hogy nem voltak hajlandóak tisztázni a bejuttatott gáz pontos eredetét, ami megakadályozta, hogy több életet mentsenek meg. Viszont néhány jelentés szerint a naloxon nevezetû szer segítségével sikerült pár túszt megmenteni.</div>
 <div class="picture"><img src="img/04-nordost.jpg"></div>
 </div>
-	<div class="popup oroszorszag-5">
-	<div class="title">A Kizlyar-Pervomayskoye-i túszdráma</div>
-	<div class="text">A Kizlyar-Pervomayskoye-i túszdráma, másnéven, a kizlyari terrorcselekmény 1996 Januárjában vette kezdetét, az elsõ csecsen háború keretein belül. Ami egy Salman Raduyev által vezetett csecsen szeparatista gerillatámadásnak indult, melyet a Az Orosz Föderáció Dagesztáni Tagköztársasági Kyzlar közelében lévõ szövetségi katonai repülõtér ellen terveztek, egy óriási túszdrámába fulladt, melyben civilek ezrei vettek részt, akiket nem sokkal késõbb szabadon engedtek. A túszdráma egy véres teljeskörû harcban teljesedett ki, melyet a csecsenek és az orosz különleges egységek vívtak meg, a dagesztáni Pervomayskoye nevû faluban, amit teljesen elpusztított az orosz tûzérség. Végül a csecsenek elmenekültek az ütközet elõl pár túszukkal, miközben legalább 26 túsz és több mint 200 katona vesztette életét mindkét oldalon.</div>
+  <div class="popup oroszorszag-5">
+  <div class="title">A Kizlyar-Pervomayskoye-i túszdráma</div>
+  <div class="text">A Kizlyar-Pervomayskoye-i túszdráma, másnéven, a kizlyari terrorcselekmény 1996 Januárjában vette kezdetét, az elsõ csecsen háború keretein belül. Ami egy Salman Raduyev által vezetett csecsen szeparatista gerillatámadásnak indult, melyet a Az Orosz Föderáció Dagesztáni Tagköztársasági Kyzlar közelében lévõ szövetségi katonai repülõtér ellen terveztek, egy óriási túszdrámába fulladt, melyben civilek ezrei vettek részt, akiket nem sokkal késõbb szabadon engedtek. A túszdráma egy véres teljeskörû harcban teljesedett ki, melyet a csecsenek és az orosz különleges egységek vívtak meg, a dagesztáni Pervomayskoye nevû faluban, amit teljesen elpusztított az orosz tûzérség. Végül a csecsenek elmenekültek az ütközet elõl pár túszukkal, miközben legalább 26 túsz és több mint 200 katona vesztette életét mindkét oldalon.</div>
 <div class="picture"><img src="img/05-kizlyar.jpg"></div>
 </div>
-	<div class="popup oroszorszag-6">
-	<div class="title"> A Budyonnovski kórházi túszdráma </div>
-	<div class="text">A Budyonnovski kórházi túszdráma 1995. június 14-étõl 19-éig tartott, mely során egy 80-200 fõs Shamil Basayev által vezetett csecsen szeparatista csoport megtámadta a Dél-Oroszországi 60000 fõs lakosú Budyonnovsk városát. Az incidens az orosz és csecsen lázadók közti tûzszünethez, és béketárgyalásokhoz vezetett (melyek sikertelenül záródtak). Az incidens nagy politikai krízist okozott Oroszországban.  Basayev emberei Június 14-én kb. délben megrohamozták a rendõrkapitányságot és a városházát, ahol csecsen zászlókat húztak fel a kormányzati hivatalok fölé. Néhány óra múlva az újabb orosz erõk megérkezése után a csecsenek visszavonultak a lakónegyedbe és a városi kórház épületében rendezõdtek újra. A kórházban 1500-1800 embert ejtettek túszul, ezek többségben civilek voltak, ezek közt 150 gyermek és számos nõ újszülött gyermekeikkel. </div>
-	<div class="picture"><img src="img/06-korhaz.jpg"></div>
+  <div class="popup oroszorszag-6">
+  <div class="title"> A Budyonnovski kórházi túszdráma </div>
+  <div class="text">A Budyonnovski kórházi túszdráma 1995. június 14-étõl 19-éig tartott, mely során egy 80-200 fõs Shamil Basayev által vezetett csecsen szeparatista csoport megtámadta a Dél-Oroszországi 60000 fõs lakosú Budyonnovsk városát. Az incidens az orosz és csecsen lázadók közti tûzszünethez, és béketárgyalásokhoz vezetett (melyek sikertelenül záródtak). Az incidens nagy politikai krízist okozott Oroszországban.  Basayev emberei Június 14-én kb. délben megrohamozták a rendõrkapitányságot és a városházát, ahol csecsen zászlókat húztak fel a kormányzati hivatalok fölé. Néhány óra múlva az újabb orosz erõk megérkezése után a csecsenek visszavonultak a lakónegyedbe és a városi kórház épületében rendezõdtek újra. A kórházban 1500-1800 embert ejtettek túszul, ezek többségben civilek voltak, ezek közt 150 gyermek és számos nõ újszülött gyermekeikkel. </div>
+  <div class="picture"><img src="img/06-korhaz.jpg"></div>
 </div>
-	<div class="popup oroszorszag-7">
-	<div class="title"> A 2004. augusztusi orosz repülõgép robbantások </div>
-	<div class="text">A 2004. augusztusi orosz repülõgép robbantások két utasszállító repülõgépen elkövetett terroristatámadások volt, melyet 23 órakor követtek el 2004. augusztus 24-én. Mindkét repülõgép a moszkvai Domodedovo Nemzetközi Repülõtérrõl szállt fel Volga-AviaExpress 1303-as járat Az elsõ repülõgép, amely lezuhant a Volga-AviaExpress 1303-as járat volt. A repteret 22:30-kor hagyta el, a kommunikáció 22:56-kor veszett el, amikor a gép Tula Oblast felett szállt 180 km-re Moszkvától dél-keletre. A repülõgép maradványait megtalálták a földön néhány órával késõbb. A szemtanúk egy erõs robbanást észleltek a repülõgépen mielõtt az lezuhant. 34 utas és 9 személyzeti tag volt a repülõgépen. Mindannyiuk meghalt a becsapódásban. Siberia Airlines 1047-as járat Percekkel az elsõ becsapódás után, a Domodedovo Nemzetközi Reptérrõl 21:35-kor felszálló Siberia Airlines 1047-as járat eltûnt a radarok képernyõirõl és lezuhant. A járat Moszkvából Sochi-ba tartott. Az orosz hírügynökség, az Interfax meg nem nevezett orosz kormányzati forrása szerint a repülõgép eltérítésrõl adott hírt a rádión, miközben Rostov Oblast felett szállt 22:59-kor. Nem sokkal ezután a gép eltûnt a radarok képernyõirõl és lezuhant. 38 utas és a 8 tagból álló személyzet volt a repülõn, túlélõk nem voltak a zuhanás után. A repülõgép maradványait 2004. augusztus 25-én találták meg  Glubokoye nevû falutól 9 km-re.</div>
+  <div class="popup oroszorszag-7">
+  <div class="title"> A 2004. augusztusi orosz repülõgép robbantások </div>
+  <div class="text">A 2004. augusztusi orosz repülõgép robbantások két utasszállító repülõgépen elkövetett terroristatámadások volt, melyet 23 órakor követtek el 2004. augusztus 24-én. Mindkét repülõgép a moszkvai Domodedovo Nemzetközi Repülõtérrõl szállt fel Volga-AviaExpress 1303-as járat Az elsõ repülõgép, amely lezuhant a Volga-AviaExpress 1303-as járat volt. A repteret 22:30-kor hagyta el, a kommunikáció 22:56-kor veszett el, amikor a gép Tula Oblast felett szállt 180 km-re Moszkvától dél-keletre. A repülõgép maradványait megtalálták a földön néhány órával késõbb. A szemtanúk egy erõs robbanást észleltek a repülõgépen mielõtt az lezuhant. 34 utas és 9 személyzeti tag volt a repülõgépen. Mindannyiuk meghalt a becsapódásban. Siberia Airlines 1047-as járat Percekkel az elsõ becsapódás után, a Domodedovo Nemzetközi Reptérrõl 21:35-kor felszálló Siberia Airlines 1047-as járat eltûnt a radarok képernyõirõl és lezuhant. A járat Moszkvából Sochi-ba tartott. Az orosz hírügynökség, az Interfax meg nem nevezett orosz kormányzati forrása szerint a repülõgép eltérítésrõl adott hírt a rádión, miközben Rostov Oblast felett szállt 22:59-kor. Nem sokkal ezután a gép eltûnt a radarok képernyõirõl és lezuhant. 38 utas és a 8 tagból álló személyzet volt a repülõn, túlélõk nem voltak a zuhanás után. A repülõgép maradványait 2004. augusztus 25-én találták meg  Glubokoye nevû falutól 9 km-re.</div>
 <div class="picture"><img src="img/07-repulo.jpg"></div>
 </div>
-	<div class="popup oroszorszag-8">
-	<div class="title"> A Grozny-i teherautós robbantások</div>
-	<div class="text">A Grozny-i teherautós robbantások 2002. december 27-én történtek, mely során három csecsen öngyilkos robbantó hajtott bele jármûveikkel az erõsen védett állami fõhadiszállásba a régió székhelyén, Grozny-ban. A két jármû vezetõi szövetségi katonai egyenruhákban voltak a szemtanúk szerint, és hivatalos igazolvánnyal rendelkeztek, mely segítségével át tudtak jutni három folytonos katonai ellenörzõponton, útban a fõhadiszállás épülete felé. Egy õr a negyedik és egyben utolsó ellenörzõ pontnál megkísérelte átnézni a jármûveket, és tüzet nyitott a teherautókra, ahogy áthajtottak az ellenörzõpontokon az épület felé. Az egy tonna dinamit erõsségû robbanás lerombolta a négyemeletes épület tetejét és padlóit. Az elsõ jelentések szerint legalább két ember meghalt. A legutolsó jelentések szerint a csecsen hivatalnok azt nyilatközták, hogy 83 ember halt meg (ebbõl 48 a helyszínen) és 210 sebesült meg. Számos csecsen közigazgatási hivatalnok sérült meg a támadás során, köztük a miniszterelnök-helyettes Zina Batyzheva is, és a csecsen biztonsági tanács titkára Rudnik Dudayev.</div>
+  <div class="popup oroszorszag-8">
+  <div class="title"> A Grozny-i teherautós robbantások</div>
+  <div class="text">A Grozny-i teherautós robbantások 2002. december 27-én történtek, mely során három csecsen öngyilkos robbantó hajtott bele jármûveikkel az erõsen védett állami fõhadiszállásba a régió székhelyén, Grozny-ban. A két jármû vezetõi szövetségi katonai egyenruhákban voltak a szemtanúk szerint, és hivatalos igazolvánnyal rendelkeztek, mely segítségével át tudtak jutni három folytonos katonai ellenörzõponton, útban a fõhadiszállás épülete felé. Egy õr a negyedik és egyben utolsó ellenörzõ pontnál megkísérelte átnézni a jármûveket, és tüzet nyitott a teherautókra, ahogy áthajtottak az ellenörzõpontokon az épület felé. Az egy tonna dinamit erõsségû robbanás lerombolta a négyemeletes épület tetejét és padlóit. Az elsõ jelentések szerint legalább két ember meghalt. A legutolsó jelentések szerint a csecsen hivatalnok azt nyilatközták, hogy 83 ember halt meg (ebbõl 48 a helyszínen) és 210 sebesült meg. Számos csecsen közigazgatási hivatalnok sérült meg a támadás során, köztük a miniszterelnök-helyettes Zina Batyzheva is, és a csecsen biztonsági tanács titkára Rudnik Dudayev.</div>
 <div class="picture"><img src="img/08-grozny.jpg"></div>
 </div>
-	<div class="popup oroszorszag-9">
-	<div class="title"> Az 1999-es Vladikavkaz-i bombarobbantás </div>
-	<div class="text">Az 1999-es vladikavkaz-i bombarobbantás egy zsúfolt vladikavkaz-i piacon történt, az oroszországi Észak-Oszétiában 1999. március 19-én, mely 62 halálos áldozatot követelt és sokakat megsebesített. Az elkövetõket 2003. december 15-én állították bíróság elé, ugyanitt el is ítélték õket. Elítélték õket még a „Szputnyik” nevû katonai lakóegységben 1999. május 18-án történt bombarobbantás, a Vladikavkaz vasútállomáson történt robbantások, illetve elítélték õket 1999. július 30-án 4 orosz tiszt elrablása miatt is, akiket csecsenföldre vittek, hogy utána váltságdíjat követelhessenek értük cserébe.</div>
-	<div class="picture"><img src="img/09-market.jpg"></div>
+  <div class="popup oroszorszag-9">
+  <div class="title"> Az 1999-es Vladikavkaz-i bombarobbantás </div>
+  <div class="text">Az 1999-es vladikavkaz-i bombarobbantás egy zsúfolt vladikavkaz-i piacon történt, az oroszországi Észak-Oszétiában 1999. március 19-én, mely 62 halálos áldozatot követelt és sokakat megsebesített. Az elkövetõket 2003. december 15-én állították bíróság elé, ugyanitt el is ítélték õket. Elítélték õket még a „Szputnyik” nevû katonai lakóegységben 1999. május 18-án történt bombarobbantás, a Vladikavkaz vasútállomáson történt robbantások, illetve elítélték õket 1999. július 30-án 4 orosz tiszt elrablása miatt is, akiket csecsenföldre vittek, hogy utána váltságdíjat követelhessenek értük cserébe.</div>
+  <div class="picture"><img src="img/09-market.jpg"></div>
 </div>
 <!-- Afrika -->
 
 <div class="popup afrika">
-	<div class="title">Afrika</div>
-	<div class="text">Afrika a maga 30 300 000 km²-nyi területével Föld harmadik legnagyobb kontinense; több mint 1 milliárd fős népességével egyben a második legnépesebb is. Számos, főleg az egyenlítő közeli országában kiemelkedő a szegénység és az éhezés, továbbá a trópusi éghajlat tovább rontja a körülményeket. Ásványi anyagokért, fegyverért, csempészáruért bizony itt is megy a harc, számos terrorista szervezet megtalálható itt.</div>
-	<div class="picture"><img src="img/af1.jpg"></div>
+  <div class="title">Afrika</div>
+  <div class="text">Afrika a maga 30 300 000 km²-nyi területével Föld harmadik legnagyobb kontinense; több mint 1 milliárd fős népességével egyben a második legnépesebb is. Számos, főleg az egyenlítő közeli országában kiemelkedő a szegénység és az éhezés, továbbá a trópusi éghajlat tovább rontja a körülményeket. Ásványi anyagokért, fegyverért, csempészáruért bizony itt is megy a harc, számos terrorista szervezet megtalálható itt.</div>
+  <div class="picture"><img src="img/af1.jpg"></div>
 </div>
 <div class="popup afrika1">
-	<div class="title">Afrika | Líbia és Kadhafi uralma</div>
-	<div class="text">Líbia mindig is egy mélyen vallásos ország volt, a politikai vezetők pedig erre alapozva évtizedek óta elnyomásban tartották az itt élő népeket, ahogy Kadhafi, a legutóbbi minisztere is az országnak. 2011 februárjában tiltakozás kezdődött a Kadhafi-rezsim ellen, aki ritka brutalitással lépett fel a fegyvertelen tüntetők ellen: katonái és Afrika más területeiről toborzott zsoldosai vérengzésbe kezdtek és terrorista módszerekkel igyekeztek visszaszerezni az ország feletti irányítást. Nemzetközi diplomácia komoly nyomást gyakorolt Kadhafira, hogy hagyjon fel a vérontással és távozzon a hatalomból. 2011. március 19-én a NATO az ENSZ felhatalmazása alapján légi és tengeri támadást indított a Kadhafi rezsim zsoldosai és a kormányerők ellen. Kadhafi személyesen adott parancsot a líbiai lázadók elleni, „előre kitervelt” gyilkosságokra.</div>
-	<div class="picture"><img src="img/af2.jpg"></div>
+  <div class="title">Afrika | Líbia és Kadhafi uralma</div>
+  <div class="text">Líbia mindig is egy mélyen vallásos ország volt, a politikai vezetők pedig erre alapozva évtizedek óta elnyomásban tartották az itt élő népeket, ahogy Kadhafi, a legutóbbi minisztere is az országnak. 2011 februárjában tiltakozás kezdődött a Kadhafi-rezsim ellen, aki ritka brutalitással lépett fel a fegyvertelen tüntetők ellen: katonái és Afrika más területeiről toborzott zsoldosai vérengzésbe kezdtek és terrorista módszerekkel igyekeztek visszaszerezni az ország feletti irányítást. Nemzetközi diplomácia komoly nyomást gyakorolt Kadhafira, hogy hagyjon fel a vérontással és távozzon a hatalomból. 2011. március 19-én a NATO az ENSZ felhatalmazása alapján légi és tengeri támadást indított a Kadhafi rezsim zsoldosai és a kormányerők ellen. Kadhafi személyesen adott parancsot a líbiai lázadók elleni, „előre kitervelt” gyilkosságokra.</div>
+  <div class="picture"><img src="img/af2.jpg"></div>
 </div>
 <div class="popup afrika2">
-	<div class="title">Afrika | '98-as robbantás, USA nagykövetség ellen</div>
-	<div class="text">Egyik egy időpontban legnagyobb lélekszámot követelő terrorcselekmény a kontinensen, az 1998-ban történt USA nagykövetség felrobbantása volt Nairobiban, Kenyában. Augusztus 7-én teherautóval juttatták be a nagy hatótávolságú pokolgépet, aminek felrobbantása 223 emberáldozatot, és több, mint 4000 sérültek követelt. A terrorcselekményt az egyiptomi iszlám Jihad követtel el Osama Bin Laden megbízásából. Az eseményt követően került Laden az USA tíz legkeresettebb bűnözői közé.</div>
-	<div class="picture"><img src="img/af3.jpg"></div>
+  <div class="title">Afrika | '98-as robbantás, USA nagykövetség ellen</div>
+  <div class="text">Egyik egy időpontban legnagyobb lélekszámot követelő terrorcselekmény a kontinensen, az 1998-ban történt USA nagykövetség felrobbantása volt Nairobiban, Kenyában. Augusztus 7-én teherautóval juttatták be a nagy hatótávolságú pokolgépet, aminek felrobbantása 223 emberáldozatot, és több, mint 4000 sérültek követelt. A terrorcselekményt az egyiptomi iszlám Jihad követtel el Osama Bin Laden megbízásából. Az eseményt követően került Laden az USA tíz legkeresettebb bűnözői közé.</div>
+  <div class="picture"><img src="img/af3.jpg"></div>
 </div>
 <div class="popup afrika3">
-	<div class="title">Afrika | L.R.A. és Joseph Kony</div>
-	<div class="text">A Felkelés Acholiföldön egy Uganda területén jelenleg is zajló konfliktus, mely 1987-ben kezdődött. A Lord's Resistance Army (LRA) egy felkelő csoport, mely Észak-Ugandában működik, de jelen van Dél-Szudánban és Kelet-Kongóban is. A mozgalmat Joseph Kony irányítja, aki Isten szóvivőjének kiáltotta ki magát. Az L.R.A. célja a Yoweri Museveni-vezette ugandai kormány megdöntése és egy teokratikus állam megalapítása, Uganda egyik népcsoportja: az acholiaiak tradícióinak megfelelően. Afrika egyik legrégebb óta tartó konfliktusáról van szó. <br>A Lord's Resistance Army az alapvető emberi jogokat nem tiszteli, beleértve a kínzásos vallatást, a foglyok megcsonkítását, a nemi erőszakot, emberrablást a civilek közül, gyermekkatonák bevetését és a lakosság mészárlását.</div>
-	<div class="picture"><img src="img/af4.jpg"></div>
+  <div class="title">Afrika | L.R.A. és Joseph Kony</div>
+  <div class="text">A Felkelés Acholiföldön egy Uganda területén jelenleg is zajló konfliktus, mely 1987-ben kezdődött. A Lord's Resistance Army (LRA) egy felkelő csoport, mely Észak-Ugandában működik, de jelen van Dél-Szudánban és Kelet-Kongóban is. A mozgalmat Joseph Kony irányítja, aki Isten szóvivőjének kiáltotta ki magát. Az L.R.A. célja a Yoweri Museveni-vezette ugandai kormány megdöntése és egy teokratikus állam megalapítása, Uganda egyik népcsoportja: az acholiaiak tradícióinak megfelelően. Afrika egyik legrégebb óta tartó konfliktusáról van szó. <br>A Lord's Resistance Army az alapvető emberi jogokat nem tiszteli, beleértve a kínzásos vallatást, a foglyok megcsonkítását, a nemi erőszakot, emberrablást a civilek közül, gyermekkatonák bevetését és a lakosság mészárlását.</div>
+  <div class="picture"><img src="img/af4.jpg"></div>
 </div>
 <div class="popup afrika4">
-	<div class="title">Afrika | Fiatalok összefogása, kitörés az elnyomás alól</div>
-	<div class="text">A szegénységből és az elnyomás alól fiatalok csoportjai, helyi csoportok próbálnak kitörni gyakran agresszív módon. A terrorcselekmények egész Afrikában jelen vannak a mai napig számos ismert, főleg iszlám csoport mind a mai napig tevékenykedik. Támadások: Algériában (Armed Islamic Group of Algeria), Egyiptomban (Salvation from Hell, Al-Quaeda), Maliban (Ansar Dine) Djiboutiban (Djibouti Youth Movement), Nigériában (Boko Haram), Somáliában (Hizbul Islam, Al-Itihaad al-Islamiya, Ras Kamboni Brigades), Ugandában, Zimbabweban (Zimbabwe People's Revolutionary Army), Tanzániában, Sudánban (Ansar al-Tawhid) és még a gazdagabb dél-afrikai államokban is.</div>
-	<div class="picture"><img src="img/af5.jpg"></div>
+  <div class="title">Afrika | Fiatalok összefogása, kitörés az elnyomás alól</div>
+  <div class="text">A szegénységből és az elnyomás alól fiatalok csoportjai, helyi csoportok próbálnak kitörni gyakran agresszív módon. A terrorcselekmények egész Afrikában jelen vannak a mai napig számos ismert, főleg iszlám csoport mind a mai napig tevékenykedik. Támadások: Algériában (Armed Islamic Group of Algeria), Egyiptomban (Salvation from Hell, Al-Quaeda), Maliban (Ansar Dine) Djiboutiban (Djibouti Youth Movement), Nigériában (Boko Haram), Somáliában (Hizbul Islam, Al-Itihaad al-Islamiya, Ras Kamboni Brigades), Ugandában, Zimbabweban (Zimbabwe People's Revolutionary Army), Tanzániában, Sudánban (Ansar al-Tawhid) és még a gazdagabb dél-afrikai államokban is.</div>
+  <div class="picture"><img src="img/af5.jpg"></div>
 </div>
 
 
 <!-- Zárás -->
 <div class="popup afrika2">
-	<div class="title">Impresszum</div>
-	<div class="text">BKF Társadalomtörténet 2. (2013 tavasz) - félésves csoportmunka<br><br>Készítették:<br>Bertók Márton (Kód és Irak-Irán)<br>Dulity Kálmán (Oroszország)<br>Horváth Ádám (Afghanisztán)<br>Lőrincz Balázs (Európa)<br>Kinorányi Dávid (Kód és Afrika)<br>Kovács Béla (USA)<br>Szépy András (India-Pakisztán)</div>
-	
+  <div class="title">Impresszum</div>
+  <div class="text">BKF Társadalomtörténet 2. (2013 tavasz) - félésves csoportmunka<br><br>Készítették:<br>Bertók Márton (Kód és Irak-Irán)<br>Dulity Kálmán (Oroszország)<br>Horváth Ádám (Afghanisztán)<br>Lőrincz Balázs (Európa)<br>Kinorányi Dávid (Kód és Afrika)<br>Kovács Béla (USA)<br>Szépy András (India-Pakisztán)</div>
+  
 </div>
 
       <div class="positionwrap">
