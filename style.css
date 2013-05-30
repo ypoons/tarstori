@@ -13,16 +13,27 @@ html, body {
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial;
 	text-rendering: optimizeLegibility !important;
 }
+#map-canvas:before {
+	box-shadow: inset 0px 0px 300px 0px rgba(0,0,0,1);
+	content: '';
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	position: absolute;
+	z-index: 900;
+}
   #markers {
-    position: absolute;
+   position: absolute;
+  	border: 2px solid rgba(0,0,0,0.8);
    left: 50%;
-   margin-left: -420px;
+   margin-left: -440px;
    z-index: 999; 
    cursor: pointer;
    box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.4);
    height: 50px;
    margin-top: 20px;
-   border-radius: 6px;
+   border-radius: 8px;
  }
  #markers div:first-child {
  	border-bottom-left-radius: 6px;
@@ -38,7 +49,7 @@ html, body {
     height: 30px; 
 	color:#fff;
    /* background-color: #d6001b; */ 
-   	background-color:#e50707;
+   	background-color:#8f0000;
     box-shadow: inset -1px -1px 1px 0px rgba(0,0,0,0.1);
     float: left; 
     padding: 15px 20px 5px 20px;
@@ -77,14 +88,7 @@ div {
 	color: #ff0021;
 }
 
-#previous, #next{
-	margin: 300px auto 0 auto;
-	text-align: center;
-	font-size: 80px;
-	line-height: 70px;
-	font-style: italic;
-	color: #ff0021;
-}
+
 
 .object1, .object2 {
 	margin: 150px auto;
@@ -146,25 +150,41 @@ div {
 	height: 300px;
 	margin: 0 auto;
 }
+#previous, #next{
+	margin: 300px auto 0 auto;
+	text-align: center;
+	font-size: 80px;
+	line-height: 70px;
+	font-style: italic;
+	color: #ff0021;
+}
+
 .positionwrap {
 	margin: 10px auto;
 	box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.3);
 	width: 160px;
 	left: 50%;
-	margin-left: 50px;
+	margin-left:-90px;
 	text-align: center; 
-	color: #ff0021;
+	color: #ffffff;
+	border-radius: 6px;
 	font-weight:bold;
 	cursor: pointer;
 	padding: 10px 20px;
 	position: absolute;
 	bottom: 30px;
 	z-index: 999;
-	background: white;
+	background: rgba(0,0,0,0.8);
 }
 .positionwrap a {
-	
 	height: 10px;
+}
+.previous {
+	border-right: 1px solid white;
+	height: 100%;
+	padding-right: 20px;
+	margin-right: 20px;
+	width: 100%;
 }
 .positionwrap .dot {
 	display: inline-block;
